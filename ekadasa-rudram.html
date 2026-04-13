@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ekadasa Rudram — SSSVSS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #D4521A;
+    --saffron-dark: #A83D10;
+    --gold: #C8913A;
+    --gold-light: #E8C06A;
+    --gold-pale: #F5E4C0;
+    --cream: #FBF6EE;
+    --cream-dark: #F2EAD8;
+    --brown: #3D2B1F;
+    --brown-mid: #6B4C35;
+    --brown-light: #9E7B5E;
+    --white: #FFFFFF;
+    --text: #2A1A0E;
+    --text-mid: #5C3D28;
+    --text-light: #9E7B5E;
+    --available: #166534;
+    --available-bg: #DCFCE7;
+    --reserved: #92400E;
+    --reserved-bg: #FEF3C7;
+    --blocked: #6B7280;
+    --blocked-bg: #F3F4F6;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 3rem;
+    background: rgba(251,246,238,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,145,58,0.18);
+  }
+  .nav-left { display: flex; align-items: center; gap: 1rem; }
+  .nav-back {
+    font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-light); text-decoration: none;
+    display: flex; align-items: center; gap: 6px;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--saffron); }
+  .nav-sep { color: var(--gold-light); font-size: 14px; }
+  .nav-current {
+    font-size: 13px; color: var(--brown); font-weight: 400;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+  }
+  .nav-actions { display: flex; gap: 1rem; align-items: center; }
+  .nav-tag {
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 5px 14px; border: 1px solid rgba(212,82,26,0.3);
+    color: var(--saffron);
+  }
+
+  /* ── HERO BANNER ── */
+  .hero {
+    margin-top: 60px;
+    position: relative;
+    background: var(--brown);
+    overflow: hidden;
+    min-height: 340px;
+    display: flex; align-items: flex-end;
+  }
+  .hero-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 10% 50%, rgba(212,82,26,0.25) 0%, transparent 50%),
+      radial-gradient(circle at 90% 30%, rgba(200,145,58,0.15) 0%, transparent 40%);
+  }
+  /* Decorative circles */
+  .hero-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(200,145,58,0.1);
+  }
+  .hero-circle-1 { width: 500px; height: 500px; right: -100px; top: -150px; }
+  .hero-circle-2 { width: 300px; height: 300px; right: 50px; top: -50px; border-color: rgba(200,145,58,0.07); }
+  .hero-circle-3 { width: 150px; height: 150px; right: 150px; top: 50px; border-color: rgba(212,82,26,0.12); }
+
+  .hero-om {
+    position: absolute; right: 8%; top: 50%; transform: translateY(-50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 180px; color: rgba(200,145,58,0.08);
+    line-height: 1; pointer-events: none;
+    animation: float 8s ease-in-out infinite;
+  }
+  @keyframes float { 0%,100%{transform:translateY(-50%)} 50%{transform:translateY(-54%)} }
+
+  .hero-inner {
+    position: relative; z-index: 2;
+    padding: 3rem 3rem 2.5rem;
+    max-width: 800px;
+  }
+  .hero-breadcrumb {
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .hero-breadcrumb span { color: rgba(200,145,58,0.4); }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 300; color: var(--cream);
+    line-height: 1.1; margin-bottom: 0.75rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold-light); }
+  .hero-desc {
+    font-size: 15px; color: rgba(251,246,238,0.65);
+    line-height: 1.75; max-width: 560px; font-weight: 300;
+    margin-bottom: 1.75rem;
+  }
+  .hero-pills { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .pill {
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 6px 16px; border: 1px solid rgba(200,145,58,0.3);
+    color: var(--gold-light);
+  }
+  .pill.filled { background: var(--saffron); border-color: var(--saffron); color: var(--white); }
+
+  /* ── STICKY SECTION NAV ── */
+  .section-nav {
+    position: sticky; top: 60px; z-index: 50;
+    background: var(--white);
+    border-bottom: 1px solid rgba(200,145,58,0.15);
+    padding: 0 3rem;
+    display: flex; gap: 0; overflow-x: auto;
+  }
+  .snav-link {
+    font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    color: var(--text-light); text-decoration: none;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap; transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .snav-link:hover { color: var(--saffron); }
+  .snav-link.active { color: var(--saffron); border-bottom-color: var(--saffron); }
+
+  /* ── PAGE WRAPPER ── */
+  .page { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+  /* ── SECTIONS ── */
+  .section { padding: 4rem 0; border-bottom: 1px solid rgba(200,145,58,0.1); }
+  .section:last-child { border-bottom: none; }
+
+  .section-head { margin-bottom: 2rem; }
+  .section-kicker {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 400; color: var(--brown);
+    line-height: 1.2;
+  }
+  .section-title em { font-style: italic; color: var(--saffron); }
+  .section-rule {
+    width: 32px; height: 1px; margin-top: 0.75rem;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+  .section-sub {
+    margin-top: 0.75rem; font-size: 14px; color: var(--text-light); line-height: 1.7; font-weight: 300;
+  }
+
+  /* ── ABOUT STRIP ── */
+  .about-strip {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px;
+    background: rgba(200,145,58,0.15);
+    border: 1px solid rgba(200,145,58,0.15);
+    margin-bottom: 2.5rem;
+  }
+  .about-strip-item {
+    background: var(--white); padding: 1.25rem 1.5rem;
+    text-align: center;
+  }
+  .asi-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 500; color: var(--saffron);
+  }
+  .asi-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); margin-top: 2px; }
+
+  /* ── CALENDAR ── */
+  .calendar-wrap {
+    border: 1px solid rgba(200,145,58,0.2);
+    overflow: hidden; background: var(--cream);
+  }
+  .calendar-placeholder {
+    min-height: 420px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 1rem;
+    padding: 2rem; text-align: center;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+  }
+  .cal-icon { font-size: 48px; opacity: 0.25; }
+  .cal-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--brown); }
+  .cal-desc { font-size: 13px; color: var(--text-light); max-width: 380px; line-height: 1.7; }
+  .cal-code { font-size: 11px; color: var(--gold); font-style: italic; margin-top: 0.5rem; font-family: monospace; background: rgba(200,145,58,0.08); padding: 8px 14px; }
+  /* Actual embed would look like: */
+  /* <iframe src="https://calendar.google.com/calendar/embed?src=CALENDAR_ID&ctz=Asia%2FSingapore&mode=MONTH" style="border:0;width:100%;height:420px;" frameborder="0" scrolling="no"></iframe> */
+
+  /* ── HOSTING TABLE ── */
+  .hosting-intro {
+    display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;
+  }
+  .host-legend {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--text-mid);
+  }
+  .host-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  .host-table-wrap { overflow-x: auto; }
+  .host-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 13px;
+  }
+  .host-table th {
+    text-align: left; padding: 10px 16px;
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-light); font-weight: 400;
+    background: var(--cream-dark);
+    border-bottom: 1px solid rgba(200,145,58,0.15);
+  }
+  .host-table td {
+    padding: 12px 16px; border-bottom: 1px solid rgba(200,145,58,0.08);
+    color: var(--text-mid); vertical-align: middle;
+  }
+  .host-table tr:last-child td { border-bottom: none; }
+  .host-table tr:hover td { background: rgba(251,246,238,0.6); }
+  .host-table td:first-child { font-weight: 500; color: var(--brown); }
+
+  .status-badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 99px; font-weight: 400;
+  }
+  .status-available { background: var(--available-bg); color: var(--available); }
+  .status-reserved  { background: var(--reserved-bg);  color: var(--reserved); }
+  .status-blocked   { background: var(--blocked-bg);   color: var(--blocked); }
+
+  .host-name { font-size: 13px; color: var(--brown-mid); }
+  .host-privacy { font-size: 11px; color: var(--text-light); font-style: italic; margin-top: 2px; }
+
+  .host-form-cta {
+    margin-top: 1.5rem; padding: 1.25rem 1.5rem;
+    background: var(--cream-dark); border-left: 3px solid var(--gold);
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  .host-form-text { font-size: 14px; color: var(--text-mid); }
+  .host-form-text strong { color: var(--brown); display: block; font-size: 15px; margin-bottom: 2px; }
+  .btn-saffron {
+    display: inline-block; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 10px 24px; background: var(--saffron); color: var(--white);
+    text-decoration: none; font-family: 'Jost', sans-serif;
+    border: none; cursor: pointer; transition: background 0.2s; white-space: nowrap;
+  }
+  .btn-saffron:hover { background: var(--saffron-dark); }
+  .btn-outline-gold {
+    display: inline-block; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 10px 24px; border: 1px solid var(--gold); color: var(--gold);
+    text-decoration: none; font-family: 'Jost', sans-serif;
+    transition: all 0.2s; white-space: nowrap;
+  }
+  .btn-outline-gold:hover { background: var(--gold); color: var(--white); }
+
+  /* ── PHOTOS ── */
+  .photos-toolbar {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;
+  }
+  .photos-note { font-size: 13px; color: var(--text-light); font-style: italic; }
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 160px 120px;
+    gap: 3px;
+  }
+  .photo-item {
+    overflow: hidden; position: relative; cursor: pointer;
+    background: var(--cream-dark);
+  }
+  .photo-item:first-child { grid-column: span 2; grid-row: span 2; }
+  .photo-item:nth-child(2) { grid-column: span 2; }
+  .photo-placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+    background: linear-gradient(135deg, var(--cream-dark) 0%, rgba(200,145,58,0.1) 100%);
+    transition: background 0.2s;
+  }
+  .photo-item:hover .photo-placeholder { background: linear-gradient(135deg, rgba(200,145,58,0.15) 0%, rgba(212,82,26,0.08) 100%); }
+  .photo-placeholder-icon { font-size: 24px; opacity: 0.3; }
+  .photo-placeholder-label { font-size: 11px; color: var(--text-light); text-align: center; opacity: 0.7; }
+  .photo-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; display: block; }
+  .photo-item:hover img { transform: scale(1.04); }
+
+  /* overlay label */
+  .photo-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 1rem 0.75rem 0.5rem;
+    background: linear-gradient(transparent, rgba(61,43,31,0.6));
+    font-size: 11px; color: rgba(251,246,238,0.9);
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .photo-item:hover .photo-overlay { opacity: 1; }
+
+  .photos-footer {
+    margin-top: 1.25rem; display: flex; justify-content: center;
+  }
+
+  /* Past years */
+  .past-years { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(200,145,58,0.1); }
+  .past-year-btn {
+    font-size: 12px; letter-spacing: 0.06em;
+    padding: 7px 16px; border: 1px solid rgba(200,145,58,0.25);
+    color: var(--brown-light); text-decoration: none;
+    transition: all 0.2s; font-family: 'Jost', sans-serif;
+    cursor: pointer; background: none;
+  }
+  .past-year-btn:hover, .past-year-btn.active { border-color: var(--saffron); color: var(--saffron); background: rgba(212,82,26,0.04); }
+  .past-year-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); align-self: center; }
+
+  /* ── PURCHASE LIST ── */
+  .purchase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .purchase-card {
+    border: 1px solid rgba(200,145,58,0.2);
+    padding: 1.25rem 1.5rem;
+    display: flex; gap: 1rem; align-items: flex-start;
+    text-decoration: none; color: inherit;
+    transition: border-color 0.2s, background 0.2s;
+    background: var(--white);
+  }
+  .purchase-card:hover { border-color: var(--saffron); background: rgba(212,82,26,0.02); }
+  .purchase-card-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: var(--cream-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .purchase-card-title { font-size: 14px; font-weight: 500; color: var(--brown); margin-bottom: 3px; }
+  .purchase-card-meta { font-size: 12px; color: var(--text-light); line-height: 1.5; }
+  .purchase-card-badge {
+    display: inline-block; margin-top: 6px;
+    font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 9px; background: rgba(200,145,58,0.1); color: var(--gold);
+  }
+
+  .purchase-note {
+    margin-top: 1.25rem; padding: 1rem 1.25rem;
+    background: var(--cream-dark); border-left: 3px solid var(--gold-light);
+    font-size: 13px; color: var(--text-mid); line-height: 1.7;
+  }
+  .purchase-note strong { color: var(--brown); }
+
+  /* ── FAQ ── */
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item {
+    border-bottom: 1px solid rgba(200,145,58,0.12);
+  }
+  .faq-item:first-child { border-top: 1px solid rgba(200,145,58,0.12); }
+
+  .faq-q {
+    width: 100%; text-align: left; background: none; border: none;
+    padding: 1.25rem 0; cursor: pointer;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 400; color: var(--brown);
+    line-height: 1.4;
+    transition: color 0.2s;
+  }
+  .faq-q:hover { color: var(--saffron); }
+  .faq-q.open { color: var(--saffron); }
+  .faq-icon {
+    flex-shrink: 0; width: 22px; height: 22px;
+    border: 1px solid rgba(200,145,58,0.3); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; color: var(--gold);
+    transition: transform 0.3s, background 0.2s;
+    margin-top: 2px;
+  }
+  .faq-q.open .faq-icon { transform: rotate(45deg); background: rgba(212,82,26,0.08); }
+
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.2s;
+    font-size: 14px; color: var(--text-mid); line-height: 1.85; font-weight: 300;
+  }
+  .faq-a.open {
+    max-height: 400px;
+    padding-bottom: 1.25rem;
+  }
+  .faq-a p + p { margin-top: 0.75rem; }
+  .faq-a ul { padding-left: 1.25rem; margin-top: 0.5rem; }
+  .faq-a ul li { margin-bottom: 0.4rem; }
+
+  /* ── CONTACT / INITIATIVE LEAD ── */
+  .lead-card {
+    display: flex; gap: 1.5rem; align-items: center;
+    padding: 1.5rem; background: var(--white);
+    border: 1px solid rgba(200,145,58,0.2);
+    flex-wrap: wrap;
+  }
+  .lead-avatar {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-pale), var(--cream-dark));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; color: var(--brown-mid); flex-shrink: 0;
+  }
+  .lead-name { font-size: 15px; font-weight: 500; color: var(--brown); margin-bottom: 2px; }
+  .lead-role { font-size: 12px; color: var(--text-light); letter-spacing: 0.06em; text-transform: uppercase; }
+  .lead-note { font-size: 13px; color: var(--text-mid); margin-top: 6px; line-height: 1.6; }
+
+  /* ── FOOTER ── */
+  .page-footer {
+    background: var(--brown); color: var(--cream-dark);
+    padding: 2rem 3rem;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+  .pf-left { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--cream); }
+  .pf-left span { display: block; font-size: 11px; font-family: 'Jost', sans-serif; color: var(--brown-light); margin-top: 2px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pf-links { display: flex; gap: 1.5rem; }
+  .pf-links a { font-size: 12px; color: var(--brown-light); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .pf-links a:hover { color: var(--cream); }
+
+  /* ── REVEAL ANIMATION ── */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero-inner { padding: 2rem 1.5rem; }
+    .hero-om { display: none; }
+    .section-nav { padding: 0 1.5rem; }
+    .page { padding: 0 1.5rem; }
+    .about-strip { grid-template-columns: 1fr 1fr 1fr; }
+    .photo-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .photo-item:first-child { grid-column: span 2; height: 200px; }
+    .photo-item:nth-child(2) { grid-column: span 1; }
+    .photo-item { height: 140px; }
+    .purchase-grid { grid-template-columns: 1fr; }
+    .page-footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <a href="index.html" class="nav-back">← SSSVSS</a>
+    <span class="nav-sep">·</span>
+    <span class="nav-current">Ekadasa Rudram</span>
+  </div>
+  <div class="nav-actions">
+    <span class="nav-tag">Regular Activity</span>
+    <a href="#hosting" class="btn-saffron">Host This Event</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-circle hero-circle-1"></div>
+  <div class="hero-circle hero-circle-2"></div>
+  <div class="hero-circle hero-circle-3"></div>
+  <div class="hero-om">ॐ</div>
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">Regular Activities <span>›</span> Ekadasa Rudram</div>
+    <h1><em>Ekadasa</em> Rudram</h1>
+    <p class="hero-desc">The chanting of Sri Rudram eleven times by eleven devotees — held twice a month on the auspicious Nakshatra Arudhra, the birth star of Bhagawan Sri Sathya Sai Baba.</p>
+    <div class="hero-pills">
+      <span class="pill filled">Twice Monthly</span>
+      <span class="pill">Nakshatra Arudhra</span>
+      <span class="pill">Open to all</span>
+      <span class="pill">Home hosted</span>
+    </div>
+  </div>
+</div>
+
+<!-- STICKY SECTION NAV -->
+<nav class="section-nav" id="section-nav">
+  <a href="#about"    class="snav-link active">About</a>
+  <a href="#calendar" class="snav-link">Calendar</a>
+  <a href="#hosting"  class="snav-link">Hosting</a>
+  <a href="#photos"   class="snav-link">Photos</a>
+  <a href="#purchase" class="snav-link">Purchase List</a>
+  <a href="#faq"      class="snav-link">FAQ</a>
+</nav>
+
+<div class="page">
+
+  <!-- ABOUT -->
+  <div class="section" id="about">
+    <div class="section-head reveal">
+      <div class="section-kicker">What is it</div>
+      <h2 class="section-title">About <em>Ekadasa Rudram</em></h2>
+      <div class="section-rule"></div>
+      <p class="section-sub">
+        Ekadasa Rudram involves the collective recitation of the sacred Sri Rudram — comprising Namakam and Chamakam — eleven times by a group of eleven chanters. The vibrations of this powerful chant are believed to purify the environment and invoke divine blessings.
+      </p>
+    </div>
+
+    <div class="about-strip reveal">
+      <div class="about-strip-item">
+        <div class="asi-val">11 × 11</div>
+        <div class="asi-label">Chanters × Repetitions</div>
+      </div>
+      <div class="about-strip-item">
+        <div class="asi-val">Twice</div>
+        <div class="asi-label">Per month</div>
+      </div>
+      <div class="about-strip-item">
+        <div class="asi-val">~3 hrs</div>
+        <div class="asi-label">Duration</div>
+      </div>
+    </div>
+
+    <div class="lead-card reveal">
+      <div class="lead-avatar">VR</div>
+      <div>
+        <div class="lead-name">Bro Vijay Ramasamy</div>
+        <div class="lead-role">Initiative Lead · Ekadasa Rudram</div>
+        <div class="lead-note">For queries about this activity, please reach out to the initiative lead. Hosting enquiries can be submitted using the form below.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALENDAR -->
+  <div class="section" id="calendar">
+    <div class="section-head reveal">
+      <div class="section-kicker">Upcoming Sessions</div>
+      <h2 class="section-title">Event <em>Calendar</em></h2>
+      <div class="section-rule"></div>
+      <p class="section-sub">All upcoming Ekadasa Rudram sessions, including date, time, and confirmed host details. Address is visible in the calendar event once hosting is confirmed.</p>
+    </div>
+
+    <div class="reveal">
+      <!-- ════════════════════════════════════════════════════
+           REPLACE THIS BLOCK WITH YOUR GOOGLE CALENDAR EMBED
+           Example:
+           <iframe
+             src="https://calendar.google.com/calendar/embed?src=YOUR_EKADASA_CALENDAR_ID%40group.calendar.google.com&ctz=Asia%2FSingapore&mode=AGENDA&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0"
+             style="border:0; width:100%; height:420px;"
+             frameborder="0" scrolling="no">
+           </iframe>
+           ════════════════════════════════════════════════════ -->
+      <div class="calendar-wrap">
+        <div class="calendar-placeholder">
+          <div class="cal-icon">📅</div>
+          <div class="cal-title">Google Calendar — Ekadasa Rudram</div>
+          <div class="cal-desc">Embed your dedicated Ekadasa Rudram Google Calendar here. The initiative lead updates dates and host details directly in Google Calendar — the page reflects changes live.</div>
+          <div class="cal-code">&lt;iframe src="https://calendar.google.com/calendar/embed?src=CALENDAR_ID..." /&gt;</div>
+        </div>
+      </div>
+
+      <!-- Upcoming sessions preview (static fallback / supplement) -->
+      <div style="margin-top: 1rem; display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(200,145,58,0.12); border: 1px solid rgba(200,145,58,0.12);">
+        <div style="background:var(--white); padding:1rem 1.25rem;">
+          <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Next session</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--brown);">26 Apr 2026</div>
+          <div style="font-size:12px;color:var(--text-light);margin-top:2px;">Saturday · 8:00 AM</div>
+          <div style="font-size:12px;color:var(--text-mid);margin-top:6px;">Host: Bro Anand Kumar</div>
+          <div style="font-size:11px;color:var(--text-light);font-style:italic;">Address in calendar event</div>
+        </div>
+        <div style="background:var(--white); padding:1rem 1.25rem;">
+          <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:4px;">Following session</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--brown);">24 May 2026</div>
+          <div style="font-size:12px;color:var(--text-light);margin-top:2px;">Sunday · 8:00 AM</div>
+          <div style="font-size:12px;color:var(--text-mid);margin-top:6px;">Host: Open</div>
+          <div style="font-size:11px;color:var(--saffron);font-style:italic;">Hosting available — volunteer!</div>
+        </div>
+        <div style="background:var(--white); padding:1rem 1.25rem;">
+          <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:4px;">June session</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--brown);">21 Jun 2026</div>
+          <div style="font-size:12px;color:var(--text-light);margin-top:2px;">Sunday · 8:00 AM</div>
+          <div style="font-size:12px;color:var(--text-mid);margin-top:6px;">Host: TBC</div>
+          <div style="font-size:11px;color:var(--text-light);font-style:italic;">To be confirmed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOSTING AVAILABILITY -->
+  <div class="section" id="hosting">
+    <div class="section-head reveal">
+      <div class="section-kicker">Home Hosting</div>
+      <h2 class="section-title">Hosting <em>Availability</em></h2>
+      <div class="section-rule"></div>
+      <p class="section-sub">Ekadasa Rudram is hosted at members' homes. Below is the hosting schedule. If you wish to offer your home for an upcoming session, please use the form below. Full address details are shared only with confirmed participants via Google Calendar.</p>
+    </div>
+
+    <div class="hosting-intro reveal">
+      <div class="host-legend"><div class="host-dot" style="background:var(--available)"></div> Available</div>
+      <div class="host-legend"><div class="host-dot" style="background:var(--reserved)"></div> Reserved</div>
+      <div class="host-legend"><div class="host-dot" style="background:var(--blocked)"></div> Blocked</div>
+      <div style="font-size:12px;color:var(--text-light);margin-left:auto;font-style:italic;">Updated live from Google Sheets</div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════
+         REPLACE this table with a Google Sheets embed:
+         <iframe
+           src="https://docs.google.com/spreadsheets/d/SHEET_ID/pubhtml?gid=0&single=true&widget=false&headers=false&chrome=false"
+           style="width:100%;height:320px;border:1px solid rgba(200,145,58,0.15);"
+           frameborder="0">
+         </iframe>
+         ════════════════════════════════════════════════════ -->
+    <div class="host-table-wrap reveal">
+      <table class="host-table">
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Date</th>
+            <th>Session</th>
+            <th>Status</th>
+            <th>Host</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>April 2026</td>
+            <td>26 Apr</td>
+            <td>1st session</td>
+            <td><span class="status-badge status-reserved">● Reserved</span></td>
+            <td><div class="host-name">Bro Anand Kumar</div><div class="host-privacy">Address in calendar event</div></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>May 2026</td>
+            <td>24 May</td>
+            <td>1st session</td>
+            <td><span class="status-badge status-available">● Available</span></td>
+            <td><div class="host-name">—</div><div class="host-privacy">Open for volunteers</div></td>
+            <td>Please sign up below</td>
+          </tr>
+          <tr>
+            <td>June 2026</td>
+            <td>21 Jun</td>
+            <td>1st session</td>
+            <td><span class="status-badge status-available">● Available</span></td>
+            <td><div class="host-name">—</div><div class="host-privacy">Open for volunteers</div></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>July 2026</td>
+            <td>TBC</td>
+            <td>1st session</td>
+            <td><span class="status-badge status-blocked">● Blocked</span></td>
+            <td><div class="host-name">—</div><div class="host-privacy">No hosting this month</div></td>
+            <td>National Day period</td>
+          </tr>
+          <tr>
+            <td>August 2026</td>
+            <td>TBC</td>
+            <td>1st session</td>
+            <td><span class="status-badge status-available">● Available</span></td>
+            <td><div class="host-name">—</div><div class="host-privacy">Open for volunteers</div></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>September 2026</td>
+            <td>TBC</td>
+            <td>1st session</td>
+            <td><span class="status-badge status-available">● Available</span></td>
+            <td><div class="host-name">—</div><div class="host-privacy">Open for volunteers</div></td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="host-form-cta reveal">
+      <div class="host-form-text">
+        <strong>Would you like to host?</strong>
+        Offer your home for an upcoming Ekadasa Rudram session. The initiative lead will confirm and update the calendar.
+      </div>
+      <!-- Replace href with your Google Form URL -->
+      <a href="https://forms.google.com/HOSTING_FORM_ID" target="_blank" class="btn-saffron">Submit Hosting Interest ↗</a>
+    </div>
+  </div>
+
+  <!-- PHOTOS -->
+  <div class="section" id="photos">
+    <div class="section-head reveal">
+      <div class="section-kicker">Our Journeys</div>
+      <h2 class="section-title">Recent <em>Photos</em></h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="photos-toolbar reveal">
+      <p class="photos-note">Photos from recent Ekadasa Rudram sessions. Full albums on Google Drive.</p>
+      <a href="https://drive.google.com/drive/folders/EKADASA_FOLDER_ID" target="_blank" class="btn-outline-gold">View All on Drive ↗</a>
+    </div>
+
+    <!-- Replace placeholders with actual <img> tags pointing to photos -->
+    <div class="photo-grid reveal">
+      <div class="photo-item">
+        <div class="photo-placeholder">
+          <div class="photo-placeholder-icon">🕉</div>
+          <div class="photo-placeholder-label">Mar 2026<br>Chanting session</div>
+        </div>
+        <div class="photo-overlay">March 2026 · Bro Anand's residence</div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder">
+          <div class="photo-placeholder-icon">📿</div>
+          <div class="photo-placeholder-label">Feb 2026<br>Group photo</div>
+        </div>
+        <div class="photo-overlay">February 2026 · Bro Ravi's residence</div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder">
+          <div class="photo-placeholder-icon">🪔</div>
+          <div class="photo-placeholder-label">Feb 2026<br>Deepa Aradhana</div>
+        </div>
+        <div class="photo-overlay">February 2026</div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder">
+          <div class="photo-placeholder-icon">🌸</div>
+          <div class="photo-placeholder-label">Jan 2026<br>Prasadam</div>
+        </div>
+        <div class="photo-overlay">January 2026</div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder">
+          <div class="photo-placeholder-icon">🔔</div>
+          <div class="photo-placeholder-label">Jan 2026<br>Abhishekam</div>
+        </div>
+        <div class="photo-overlay">January 2026</div>
+      </div>
+    </div>
+
+    <div class="past-years reveal">
+      <span class="past-year-label">Past albums:</span>
+      <button class="past-year-btn active">2026</button>
+      <button class="past-year-btn">2025</button>
+      <button class="past-year-btn">2024</button>
+      <button class="past-year-btn">2023</button>
+      <button class="past-year-btn">2022</button>
+    </div>
+  </div>
+
+  <!-- PURCHASE LIST -->
+  <div class="section" id="purchase">
+    <div class="section-head reveal">
+      <div class="section-kicker">What to Bring / Buy</div>
+      <h2 class="section-title">Purchase <em>List</em></h2>
+      <div class="section-rule"></div>
+      <p class="section-sub">Files are maintained on Google Drive and updated by the initiative lead. Click to open or download the latest version.</p>
+    </div>
+
+    <div class="purchase-grid">
+      <a href="https://drive.google.com/file/d/MAIN_PURCHASE_LIST_ID/view" target="_blank" class="purchase-card reveal">
+        <div class="purchase-card-icon">📋</div>
+        <div>
+          <div class="purchase-card-title">Standard Purchase List</div>
+          <div class="purchase-card-meta">Items required for every Ekadasa Rudram session — flowers, fruits, camphor, agarbathi and more.</div>
+          <span class="purchase-card-badge">Google Drive · PDF</span>
+        </div>
+      </a>
+      <a href="https://drive.google.com/file/d/HOST_CHECKLIST_ID/view" target="_blank" class="purchase-card reveal">
+        <div class="purchase-card-icon">🏠</div>
+        <div>
+          <div class="purchase-card-title">Host Preparation Checklist</div>
+          <div class="purchase-card-meta">Full checklist for families hosting the event at home — space arrangement, prasadam, puja items and setup guide.</div>
+          <span class="purchase-card-badge">Google Drive · PDF</span>
+        </div>
+      </a>
+      <a href="https://drive.google.com/file/d/ABHISHEKA_LIST_ID/view" target="_blank" class="purchase-card reveal">
+        <div class="purchase-card-icon">🪔</div>
+        <div>
+          <div class="purchase-card-title">Abhishekam Items List</div>
+          <div class="purchase-card-meta">Specific items required when Abhishekam is performed alongside the Rudram chanting.</div>
+          <span class="purchase-card-badge">Google Drive · PDF</span>
+        </div>
+      </a>
+      <a href="https://drive.google.com/file/d/PRASADAM_GUIDE_ID/view" target="_blank" class="purchase-card reveal">
+        <div class="purchase-card-icon">🍚</div>
+        <div>
+          <div class="purchase-card-title">Prasadam Preparation Guide</div>
+          <div class="purchase-card-meta">Suggested prasadam items and quantities for groups of 15–25 participants.</div>
+          <span class="purchase-card-badge">Google Drive · Doc</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="purchase-note reveal">
+      <strong>Note for hosts:</strong> The purchase list is updated periodically by the initiative lead. Always download the latest version from Google Drive before each session. If you have suggestions or additions, please contact the initiative lead directly.
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section" id="faq">
+    <div class="section-head reveal">
+      <div class="section-kicker">Common Questions</div>
+      <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is Ekadasa Rudram and why is it significant?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Ekadasa Rudram involves the chanting of Sri Rudram — which comprises Namakam and Chamakam from the Krishna Yajurveda — eleven times by eleven devoted chanters simultaneously. The word "Ekadasa" means eleven in Sanskrit.</p>
+          <p>Bhagawan Sri Sathya Sai Baba has spoken extensively on the power of Rudram, describing how its vibrations purify the atmosphere, invoke divine grace, and align the chanter with Universal Consciousness. SSSVSS holds this as its founding and most sacred practice.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          When does Ekadasa Rudram take place each month?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Ekadasa Rudram is held twice a month, on the day of Nakshatra Arudhra — the birth star of Bhagawan Sri Sathya Sai Baba. The exact date varies each month based on the Hindu lunar calendar.</p>
+          <p>Please check the calendar above or subscribe to the Google Calendar to receive automatic reminders.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can I attend even if I don't know how to chant Rudram?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Yes, absolutely. All devotees are welcome to attend and participate in any way they are comfortable — whether chanting, listening, or simply being present in the sacred atmosphere.</p>
+          <p>If you wish to learn the chanting, SSSVSS conducts regular Rudram classes. Please see the Vedic Classes section for the current schedule and registration details.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How does home hosting work? What do I need to prepare?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Hosting Ekadasa Rudram at your home is considered a great blessing and a form of seva. To offer your home:</p>
+          <ul>
+            <li>Submit a hosting request using the form in the Hosting section above</li>
+            <li>The initiative lead will confirm the date and add your address to the Google Calendar event</li>
+            <li>Your full address is only shared with registered participants — it is not displayed publicly on this website</li>
+          </ul>
+          <p>For preparation details, please download the <strong>Host Preparation Checklist</strong> from the Purchase List section.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How many people typically attend a session?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>A standard session requires exactly 11 chanters. Total attendance, including family members and other devotees, typically ranges from 15 to 30 people. Please ensure your home can comfortably accommodate this number in a prayer space.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What time does the session start and how long does it last?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sessions typically begin at 8:00 AM and last approximately 3 hours, including the chanting, Abhishekam (where applicable), Mangala Arati, and prasadam.</p>
+          <p>Participants are welcome to arrive 15 minutes early to help with setup and preparation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Who do I contact if I have more questions?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Please reach out to the initiative lead listed at the top of this page. For general SSSVSS enquiries, you may also use the contact form on the main website or reach us via our WhatsApp group.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+<!-- FOOTER -->
+<div class="page-footer">
+  <div class="pf-left">
+    Sri Sathya Sai Vedic Society Singapore
+    <span>Sai Ram 🙏 · Regular Activities</span>
+  </div>
+  <div class="pf-links">
+    <a href="index.html">Home</a>
+    <a href="#calendar">Calendar</a>
+    <a href="#hosting">Host</a>
+    <a href="https://tinyurl.com/sssvssclassregistration" target="_blank">Register</a>
+  </div>
+</div>
+
+<script>
+  // ── FAQ accordion ──
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-q').forEach(b => {
+      b.classList.remove('open');
+      b.nextElementSibling.classList.remove('open');
+    });
+    // Open clicked if it was closed
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+
+  // ── Scroll reveal ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── Active section nav highlight ──
+  const sections = ['about','calendar','hosting','photos','purchase','faq'];
+  const navLinks = document.querySelectorAll('.snav-link');
+  window.addEventListener('scroll', () => {
+    let current = 'about';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 140) current = id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // ── Past year filter (visual only — in production, links to Drive folder per year) ──
+  document.querySelectorAll('.past-year-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.past-year-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
