@@ -4,236 +4,163 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sri Sathya Sai Vedic Society Singapore — SSSVSS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
 <style>
-  :root {
-    --saffron: #D4521A;
-    --saffron-dark: #A83D10;
-    --gold: #C8913A;
-    --gold-light: #E8C06A;
-    --gold-pale: #F5E4C0;
-    --cream: #FBF6EE;
-    --cream-dark: #F2EAD8;
-    --brown: #3D2B1F;
-    --brown-mid: #6B4C35;
-    --brown-light: #9E7B5E;
-    --white: #FFFFFF;
-    --text: #2A1A0E;
-    --text-mid: #5C3D28;
-    --text-light: #9E7B5E;
-    --teal: #1D6B5A;
-    --teal-bright: #2EA88A;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
-
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.1rem 3rem;
-    background: rgba(251,246,238,0.94); backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(200,145,58,0.18);
-    transition: box-shadow 0.3s;
-  }
-  .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-  .nav-om { font-size: 24px; color: var(--saffron); line-height: 1; }
-  .nav-name { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 500; color: var(--brown); line-height: 1.25; }
-  .nav-name span { display: block; font-size: 10px; font-family: 'Jost', sans-serif; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--saffron); }
-  .nav-join { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 22px; background: var(--saffron); color: var(--white); text-decoration: none; transition: background 0.2s; }
-  .nav-join:hover { background: var(--brown); }
-  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; }
-  .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--brown); }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh; display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    position: relative; text-align: center;
-    padding: 9rem 2rem 5rem; overflow: hidden;
-  }
-  .hero-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(200,145,58,0.1); top: 50%; left: 50%; transform: translate(-50%,-50%); animation: spin 80s linear infinite; }
-  .hero-ring:nth-child(2) { animation-duration: 120s; animation-direction: reverse; border-color: rgba(212,82,26,0.06); }
-  .hero-ring:nth-child(3) { animation-duration: 60s; border-color: rgba(200,145,58,0.07); }
-  @keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
-  .hero-bg-glow { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 30% 60%, rgba(212,82,26,0.05) 0%, transparent 55%), radial-gradient(ellipse at 70% 30%, rgba(200,145,58,0.07) 0%, transparent 50%); }
-  .hero-om-bg { position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 380px; color: rgba(200,145,58,0.055); line-height: 1; top: 50%; left: 50%; transform: translate(-50%,-54%); pointer-events: none; user-select: none; animation: breathe 10s ease-in-out infinite; }
-  @keyframes breathe { 0%,100%{opacity:0.6;transform:translate(-50%,-54%) scale(1)} 50%{opacity:1;transform:translate(-50%,-54%) scale(1.015)} }
-  .hero-content { position: relative; z-index: 2; }
-  .hero-eyebrow { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; animation: fadeUp 0.9s 0.1s both; }
-  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 7vw, 5.8rem); font-weight: 300; line-height: 1.05; color: var(--brown); margin-bottom: 0.5rem; animation: fadeUp 0.9s 0.2s both; }
-  .hero-title em { font-style: italic; color: var(--saffron); }
-  .hero-title-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem, 2.5vw, 1.8rem); font-weight: 300; font-style: italic; color: var(--brown-light); margin-bottom: 2rem; animation: fadeUp 0.9s 0.3s both; }
-  .hero-rule { width: 50px; height: 1px; margin: 0 auto 1.75rem; background: linear-gradient(90deg, transparent, var(--gold), transparent); animation: fadeUp 0.9s 0.35s both; }
-  .hero-desc { font-size: 16px; color: var(--text-light); max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.85; font-weight: 300; animation: fadeUp 0.9s 0.4s both; }
-  .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.9s 0.5s both; }
-  .btn-primary { display: inline-block; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; padding: 13px 32px; background: var(--saffron); color: var(--white); text-decoration: none; transition: background 0.2s; }
-  .btn-primary:hover { background: var(--saffron-dark); }
-  .btn-ghost { display: inline-block; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 32px; border: 1px solid rgba(200,145,58,0.4); color: var(--brown-mid); text-decoration: none; transition: all 0.2s; }
-  .btn-ghost:hover { border-color: var(--saffron); color: var(--saffron); }
-  .hero-stats { display: flex; gap: 3.5rem; justify-content: center; margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid rgba(200,145,58,0.15); animation: fadeUp 0.9s 0.6s both; }
-  .hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 500; color: var(--saffron); line-height: 1; }
-  .hero-stat-lbl { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-top: 4px; }
-  .hero-scroll { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-light); animation: fadeUp 1s 1s both; }
-  .scroll-line { width: 1px; height: 36px; background: linear-gradient(to bottom, var(--gold-light), transparent); animation: scrollPulse 2s ease-in-out infinite; }
-  @keyframes scrollPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
-  @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:none} }
-
-  /* SHARED */
-  .section-wrap { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
-  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .reveal.visible { opacity: 1; transform: none; }
-
-  /* ABOUT */
-  .about-section { background: var(--white); padding: 5.5rem 0; }
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-  .about-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 300; font-style: italic; color: var(--brown); line-height: 1.65; border-left: 2px solid var(--gold); padding-left: 1.5rem; margin-bottom: 2rem; }
-  .about-quote cite { display: block; margin-top: 0.75rem; font-size: 11px; font-style: normal; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); }
-  .about-body { font-size: 15px; line-height: 1.9; color: var(--text-mid); font-weight: 300; }
-  .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 2rem; }
-  .value-pill { padding: 0.9rem 1.1rem; background: var(--cream); border-left: 2px solid var(--gold-light); }
-  .value-pill.full { grid-column: span 2; }
-  .value-title { font-size: 13px; font-weight: 500; color: var(--brown); }
-  .value-sub { font-size: 11px; color: var(--text-light); margin-top: 1px; }
-
-  /* ACTIVITIES BLOCK */
-  .activities-header { background: var(--brown); padding: 4.5rem 2rem 0; text-align: center; }
-  .ah-kicker { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
-  .ah-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; color: var(--cream); line-height: 1.1; margin-bottom: 0.6rem; }
-  .ah-title em { font-style: italic; color: var(--gold-light); }
-  .ah-sub { font-size: 14px; color: rgba(251,246,238,0.5); max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.8; font-weight: 300; }
-
-  /* Tab strip */
-  .tab-strip { display: flex; justify-content: center; border-bottom: 1px solid rgba(200,145,58,0.2); }
-  .tab-btn { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem 2.25rem; background: none; border: none; cursor: pointer; color: rgba(251,246,238,0.4); font-family: 'Jost', sans-serif; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.2s; position: relative; top: 1px; }
-  .tab-btn:hover { color: rgba(251,246,238,0.75); }
-  .tab-btn.t-regular { color: var(--saffron); border-bottom-color: var(--saffron); }
-  .tab-btn.t-yearly  { color: var(--gold-light); border-bottom-color: var(--gold-light); }
-  .tab-btn.t-veda    { color: var(--teal-bright); border-bottom-color: var(--teal-bright); }
-
-  /* Panels */
-  .panels-bg { background: var(--brown); }
-  .act-panel { display: none; padding: 3rem 2rem 5rem; max-width: 1160px; margin: 0 auto; }
-  .act-panel.active { display: block; }
-
-  /* REGULAR — 4-col grid */
-  .regular-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(200,145,58,0.1); }
-  .reg-card { background: rgba(255,255,255,0.03); padding: 1.75rem 1.5rem; border-top: 2px solid transparent; text-decoration: none; color: inherit; display: block; transition: background 0.2s, border-color 0.2s; }
-  .reg-card:hover { background: rgba(255,255,255,0.07); border-top-color: var(--saffron); }
-  .reg-icon { font-size: 26px; margin-bottom: 1rem; }
-  .reg-freq { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--saffron); margin-bottom: 0.4rem; opacity: 0.85; }
-  .reg-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; color: var(--cream); margin-bottom: 0.5rem; line-height: 1.3; }
-  .reg-desc { font-size: 12px; color: rgba(251,246,238,0.42); line-height: 1.65; font-weight: 300; }
-  .reg-link { display: inline-block; margin-top: 1rem; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid rgba(200,145,58,0.25); padding-bottom: 1px; }
-
-  /* YEARLY — 2×2 layout */
-  .yearly-featured { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(200,145,58,0.1); margin-bottom: 1px; }
-  .yearly-standard { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(200,145,58,0.1); }
-  .yearly-card { background: rgba(255,255,255,0.03); padding: 2rem; text-decoration: none; color: inherit; border-top: 2px solid transparent; transition: background 0.2s, border-color 0.2s; display: block; }
-  .yearly-card:hover { background: rgba(255,255,255,0.07); border-top-color: var(--gold); }
-  .yearly-badge { display: inline-block; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 10px; background: rgba(201,74,14,0.25); color: var(--gold-light); border: 1px solid rgba(201,74,14,0.3); margin-bottom: 0.85rem; }
-  .yearly-icon { font-size: 28px; margin-bottom: 0.85rem; }
-  .yearly-when { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; opacity: 0.8; }
-  .yearly-name { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; color: var(--cream); margin-bottom: 0.5rem; line-height: 1.25; }
-  .yearly-desc { font-size: 13px; color: rgba(251,246,238,0.42); line-height: 1.7; font-weight: 300; }
-  .yearly-subs { margin-top: 1rem; padding-top: 0.85rem; border-top: 1px solid rgba(200,145,58,0.12); }
-  .yearly-sub { font-size: 11px; color: rgba(200,145,58,0.55); padding: 2px 0; display: flex; align-items: center; gap: 5px; }
-  .yearly-sub::before { content: '·'; color: rgba(200,145,58,0.35); }
-  .yearly-link { display: inline-block; margin-top: 1rem; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid rgba(200,145,58,0.25); padding-bottom: 1px; }
-
-  /* VEDA */
-  .veda-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 2.5rem; }
-  .veda-intro-text { font-size: 14px; color: rgba(251,246,238,0.52); line-height: 1.85; font-weight: 300; }
-  .veda-intro-text p+p { margin-top: 0.85rem; }
-  .veda-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: rgba(245,228,192,0.65); line-height: 1.6; border-left: 2px solid rgba(200,145,58,0.35); padding-left: 1.25rem; }
-  .veda-quote cite { display: block; font-size: 11px; font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(200,145,58,0.45); margin-top: 0.6rem; }
-  .gurus-row { display: flex; gap: 1px; background: rgba(200,145,58,0.1); margin-bottom: 1px; }
-  .guru-card { flex: 1; background: rgba(255,255,255,0.04); padding: 1.25rem; text-align: center; text-decoration: none; color: inherit; transition: background 0.2s; border-top: 2px solid transparent; }
-  .guru-card:hover { background: rgba(255,255,255,0.08); border-top-color: var(--teal-bright); }
-  .guru-av { width: 44px; height: 44px; border-radius: 50%; background: rgba(200,145,58,0.15); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--gold-light); margin: 0 auto 0.5rem; }
-  .guru-name { font-size: 13px; font-weight: 500; color: var(--cream); }
-  .guru-role { font-size: 11px; color: rgba(200,145,58,0.55); margin-top: 2px; }
-  .veda-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(200,145,58,0.1); }
-  .veda-card { background: rgba(255,255,255,0.03); padding: 1.5rem; text-decoration: none; color: inherit; border-top: 2px solid transparent; transition: background 0.2s, border-color 0.2s; display: block; }
-  .veda-card:hover { background: rgba(255,255,255,0.07); border-top-color: var(--teal-bright); }
-  .veda-card-icon { font-size: 22px; margin-bottom: 0.75rem; }
-  .veda-card-audience { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 0.35rem; opacity: 0.9; }
-  .veda-card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--cream); margin-bottom: 0.3rem; }
-  .veda-card-desc { font-size: 12px; color: rgba(251,246,238,0.38); line-height: 1.65; }
-  .veda-reg-bar { margin-top: 1px; padding: 1.5rem 2rem; background: rgba(29,107,90,0.12); border: 1px solid rgba(46,168,138,0.2); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-  .vrb-text { font-size: 14px; color: rgba(251,246,238,0.65); }
-  .vrb-text strong { display: block; font-size: 16px; color: var(--cream); font-family: 'Cormorant Garamond', serif; font-weight: 400; margin-bottom: 2px; }
-  .btn-teal { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 11px 26px; background: var(--teal); color: var(--white); text-decoration: none; transition: background 0.2s; }
-  .btn-teal:hover { background: #145247; }
-
-  /* CALENDAR */
-  .calendar-strip { background: var(--white); padding: 5rem 0; }
-  .cal-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
-  .cal-embed { border: 1px solid rgba(200,145,58,0.18); min-height: 360px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--cream); gap: 0.75rem; padding: 2rem; text-align: center; }
-  .cal-icon { font-size: 40px; opacity: 0.2; }
-  .cal-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--brown); }
-  .cal-desc { font-size: 12px; color: var(--text-light); max-width: 260px; line-height: 1.7; }
-  .cal-code { font-size: 11px; color: var(--gold); font-family: monospace; background: rgba(200,145,58,0.07); padding: 6px 12px; }
-  .upcoming-list { display: flex; flex-direction: column; }
-  .up-item { display: grid; grid-template-columns: 72px 1fr auto; gap: 1.25rem; align-items: center; padding: 1.1rem 0; border-bottom: 1px solid rgba(200,145,58,0.1); text-decoration: none; color: inherit; transition: padding-left 0.2s; }
-  .up-item:hover { padding-left: 6px; }
-  .up-item:last-of-type { border-bottom: none; }
-  .up-day { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--saffron); line-height: 1; text-align: center; }
-  .up-mon { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); text-align: center; }
-  .up-name { font-size: 14px; font-weight: 500; color: var(--brown); margin-bottom: 2px; }
-  .up-meta { font-size: 12px; color: var(--text-light); }
-  .up-tag { font-size: 10px; letter-spacing: 0.07em; text-transform: uppercase; padding: 3px 10px; white-space: nowrap; }
-  .t-r { background: rgba(212,82,26,0.08); color: var(--saffron); }
-  .t-y { background: rgba(200,145,58,0.1); color: var(--gold); }
-  .t-v { background: rgba(29,107,90,0.1); color: var(--teal); }
-
-  /* ANNOUNCEMENTS */
-  .announce-section { background: var(--cream-dark); padding: 5rem 0; }
-  .announce-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-  .ann-card { background: var(--white); padding: 1.75rem; border-bottom: 2px solid transparent; transition: border-color 0.2s; text-decoration: none; color: inherit; display: block; }
-  .ann-card:hover { border-bottom-color: var(--gold); }
-  .ann-date { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
-  .ann-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--brown); margin-bottom: 0.4rem; line-height: 1.3; }
-  .ann-body { font-size: 13px; color: var(--text-light); line-height: 1.7; font-weight: 300; }
-  .ann-tag { display: inline-block; margin-top: 0.75rem; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; background: rgba(212,82,26,0.07); color: var(--saffron); }
-
-  /* REGISTER */
-  .register-section { background: var(--saffron); padding: 5rem 2rem; text-align: center; }
-  .reg-ey { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.75rem; }
-  .reg-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--white); margin-bottom: 0.3rem; }
-  .reg-title em { font-style: italic; color: var(--gold-light); }
-  .reg-rule { width: 36px; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); margin: 1rem auto; }
-  .reg-desc { font-size: 15px; color: rgba(255,255,255,0.72); max-width: 500px; margin: 0 auto 2.25rem; line-height: 1.8; font-weight: 300; }
-  .btn-white { display: inline-block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 40px; background: var(--white); color: var(--saffron); text-decoration: none; transition: background 0.2s; }
-  .btn-white:hover { background: var(--cream); }
-
-  /* FOOTER */
-  footer { background: var(--brown); padding: 3.5rem 2rem 2rem; }
-  .footer-grid { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(200,145,58,0.15); }
-  .f-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--cream); margin-bottom: 0.75rem; }
-  .f-brand-desc { font-size: 13px; color: var(--brown-light); line-height: 1.75; font-weight: 300; }
-  .f-col-title { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-  .f-links { list-style: none; }
-  .f-links li { margin-bottom: 0.5rem; }
-  .f-links a { font-size: 13px; color: var(--brown-light); text-decoration: none; transition: color 0.2s; font-weight: 300; }
-  .f-links a:hover { color: var(--cream); }
-  .footer-bottom { max-width: 1160px; margin: 1.5rem auto 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 12px; color: var(--brown-light); }
-
-  @media (max-width: 1024px) { .regular-grid { grid-template-columns: repeat(2,1fr); } .veda-grid { grid-template-columns: repeat(2,1fr); } }
-  @media (max-width: 860px) { nav { padding: 1rem 1.5rem; } .nav-links,.nav-join { display: none; } .hamburger { display: flex; } .about-grid { grid-template-columns: 1fr; gap: 2rem; } .veda-intro { grid-template-columns: 1fr; } .yearly-featured,.yearly-standard { grid-template-columns: 1fr; } .cal-layout { grid-template-columns: 1fr; } .announce-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } .hero-stats { gap: 2rem; } }
-  @media (max-width: 600px) { .regular-grid,.veda-grid { grid-template-columns: 1fr; } .values-grid { grid-template-columns: 1fr; } .value-pill.full { grid-column: span 1; } .footer-grid { grid-template-columns: 1fr; } .tab-btn { padding: 0.85rem 1rem; font-size: 10px; } .up-tag { display: none; } }
+  /* Hero overrides */
+  .hero { min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;text-align:center;padding:9rem 2rem 5rem;overflow:hidden; }
+  .h-ring { position:absolute;border-radius:50%;border:1px solid rgba(200,145,58,0.09);top:50%;left:50%;transform:translate(-50%,-50%);animation:spin 80s linear infinite; }
+  .h-ring:nth-child(2){animation-duration:120s;animation-direction:reverse;border-color:rgba(212,82,26,0.05);}
+  .h-ring:nth-child(3){animation-duration:60s;}
+  @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg);}}
+  .h-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 30% 60%,rgba(212,82,26,0.05) 0%,transparent 55%),radial-gradient(ellipse at 70% 30%,rgba(200,145,58,0.06) 0%,transparent 50%);}
+  .h-om-bg{position:absolute;font-family:'Cormorant Garamond',serif;font-size:360px;color:rgba(200,145,58,0.05);top:50%;left:50%;transform:translate(-50%,-54%);pointer-events:none;user-select:none;animation:breathe 10s ease-in-out infinite;}
+  @keyframes breathe{0%,100%{opacity:0.6;transform:translate(-50%,-54%) scale(1)}50%{opacity:1;transform:translate(-50%,-54%) scale(1.012)}}
+  .h-c{position:relative;z-index:2;}
+  .h-ey{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;animation:fadeUp 0.9s 0.1s both;}
+  .h-t{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,5.6rem);font-weight:300;line-height:1.05;color:var(--brown);margin-bottom:0.5rem;animation:fadeUp 0.9s 0.2s both;}
+  .h-t em{font-style:italic;color:var(--saffron);}
+  .h-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2.2vw,1.6rem);font-weight:300;font-style:italic;color:var(--brown-light);margin-bottom:2rem;animation:fadeUp 0.9s 0.3s both;}
+  .h-rule{width:46px;height:1px;margin:0 auto 1.75rem;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:fadeUp 0.9s 0.35s both;}
+  .h-desc{font-size:15px;color:var(--text-light);max-width:510px;margin:0 auto 2.5rem;line-height:1.85;font-weight:300;animation:fadeUp 0.9s 0.4s both;}
+  .h-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.9s 0.5s both;}
+  .h-stats{display:flex;gap:3.5rem;justify-content:center;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid rgba(200,145,58,0.14);animation:fadeUp 0.9s 0.6s both;}
+  .h-sn{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:500;color:var(--saffron);line-height:1;}
+  .h-sl{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-light);margin-top:4px;}
+  .h-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-light);animation:fadeUp 1s 1s both;}
+  .s-line{width:1px;height:34px;background:linear-gradient(to bottom,var(--gold-light),transparent);animation:sp 2s ease-in-out infinite;}
+  @keyframes sp{0%,100%{opacity:0.4}50%{opacity:1}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  /* about */
+  .about-s{background:var(--white);padding:5rem 0;}
+  .ag{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+  .aq{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;font-style:italic;color:var(--brown);line-height:1.6;border-left:2px solid var(--gold);padding-left:1.5rem;margin-bottom:1.75rem;}
+  .aq cite{display:block;margin-top:0.75rem;font-size:10px;font-style:normal;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-light);}
+  .ab{font-size:14px;line-height:1.9;color:var(--text-mid);font-weight:300;}
+  .vg{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-top:1.75rem;}
+  .vp{padding:0.85rem 1rem;background:var(--cream);border-left:2px solid var(--gold-light);}
+  .vp.full{grid-column:span 2;}
+  .vpt{font-size:12px;font-weight:500;color:var(--brown);}
+  .vps{font-size:11px;color:var(--text-light);margin-top:1px;}
+  /* activities dark block */
+  .act-hdr{background:var(--brown);padding:4.5rem 2rem 0;text-align:center;}
+  .ah-k{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem;}
+  .ah-t{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:0.6rem;}
+  .ah-t em{font-style:italic;color:var(--gold-light);}
+  .ah-s{font-size:13px;color:rgba(251,246,238,0.48);max-width:540px;margin:0 auto 2.5rem;line-height:1.8;font-weight:300;}
+  .tab-strip{display:flex;justify-content:center;border-bottom:1px solid rgba(200,145,58,0.2);}
+  .tb{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2rem;background:none;border:none;cursor:pointer;color:rgba(251,246,238,0.38);font-family:'Jost',sans-serif;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.2s;position:relative;top:1px;}
+  .tb:hover{color:rgba(251,246,238,0.7);}
+  .tb.tr{color:var(--saffron);border-bottom-color:var(--saffron);}
+  .tb.ty{color:var(--gold-light);border-bottom-color:var(--gold-light);}
+  .tb.tv{color:#2EA88A;border-bottom-color:#2EA88A;}
+  .panels{background:var(--brown);}
+  .panel{display:none;padding:2.5rem 2rem 4.5rem;max-width:1160px;margin:0 auto;}
+  .panel.active{display:block;}
+  /* Regular grid */
+  .rg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(200,145,58,0.1);}
+  .rc{background:rgba(255,255,255,0.03);padding:1.6rem 1.4rem;border-top:2px solid transparent;text-decoration:none;color:inherit;display:block;transition:background 0.2s,border-color 0.2s;}
+  .rc:hover{background:rgba(255,255,255,0.07);border-top-color:var(--saffron);}
+  .ri{font-size:24px;margin-bottom:0.85rem;}
+  .rq{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--saffron);margin-bottom:0.35rem;opacity:0.85;}
+  .rn{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:var(--cream);margin-bottom:0.4rem;line-height:1.3;}
+  .rd{font-size:11px;color:rgba(251,246,238,0.38);line-height:1.6;font-weight:300;}
+  .rl{display:inline-block;margin-top:0.85rem;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid rgba(200,145,58,0.25);padding-bottom:1px;}
+  /* Yearly */
+  .yf{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(200,145,58,0.1);margin-bottom:1px;}
+  .ys{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(200,145,58,0.1);}
+  .yc{background:rgba(255,255,255,0.03);padding:1.75rem;text-decoration:none;color:inherit;border-top:2px solid transparent;transition:background 0.2s,border-color 0.2s;display:block;}
+  .yc:hover{background:rgba(255,255,255,0.07);border-top-color:var(--gold);}
+  .yb{display:inline-block;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:3px 10px;background:rgba(201,74,14,0.25);color:var(--gold-light);border:1px solid rgba(201,74,14,0.3);margin-bottom:0.8rem;}
+  .yi{font-size:26px;margin-bottom:0.8rem;}
+  .yw{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;opacity:0.8;}
+  .yn{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--cream);margin-bottom:0.4rem;line-height:1.25;}
+  .yd{font-size:12px;color:rgba(251,246,238,0.4);line-height:1.65;font-weight:300;}
+  .ysubs{margin-top:0.9rem;padding-top:0.75rem;border-top:1px solid rgba(200,145,58,0.1);}
+  .ysi{font-size:10px;color:rgba(200,145,58,0.5);padding:2px 0;display:flex;align-items:center;gap:5px;}
+  .ysi::before{content:'·';color:rgba(200,145,58,0.3);}
+  /* Veda */
+  .vi{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;margin-bottom:2.5rem;}
+  .vit{font-size:13px;color:rgba(251,246,238,0.5);line-height:1.85;font-weight:300;}
+  .vit p+p{margin-top:0.8rem;}
+  .viq{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:rgba(245,228,192,0.65);line-height:1.6;border-left:2px solid rgba(200,145,58,0.3);padding-left:1.2rem;}
+  .viq cite{display:block;font-size:10px;font-style:normal;letter-spacing:0.1em;text-transform:uppercase;color:rgba(200,145,58,0.4);margin-top:0.5rem;}
+  .vgr{display:flex;gap:1px;background:rgba(200,145,58,0.1);margin-bottom:1px;}
+  .gc{flex:1;background:rgba(255,255,255,0.04);padding:1.1rem;text-align:center;text-decoration:none;color:inherit;transition:background 0.2s;border-top:2px solid transparent;}
+  .gc:hover{background:rgba(255,255,255,0.08);border-top-color:#2EA88A;}
+  .gav{width:40px;height:40px;border-radius:50%;background:rgba(200,145,58,0.15);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:var(--gold-light);margin:0 auto 0.5rem;}
+  .gn{font-size:12px;font-weight:500;color:var(--cream);}
+  .gr{font-size:10px;color:rgba(200,145,58,0.5);margin-top:2px;}
+  .vcg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(200,145,58,0.1);}
+  .vcc{background:rgba(255,255,255,0.03);padding:1.4rem;text-decoration:none;color:inherit;border-top:2px solid transparent;transition:background 0.2s,border-color 0.2s;display:block;}
+  .vcc:hover{background:rgba(255,255,255,0.07);border-top-color:#2EA88A;}
+  .vci{font-size:20px;margin-bottom:0.65rem;}
+  .vca{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#2EA88A;margin-bottom:0.3rem;}
+  .vcn{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--cream);margin-bottom:0.25rem;}
+  .vcd{font-size:11px;color:rgba(251,246,238,0.36);line-height:1.6;}
+  .vrb{margin-top:1px;padding:1.35rem 1.75rem;background:rgba(29,107,90,0.12);border:1px solid rgba(46,168,138,0.2);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+  .vrbt{font-size:13px;color:rgba(251,246,238,0.6);}
+  .vrbt strong{display:block;font-size:15px;color:var(--cream);font-family:'Cormorant Garamond',serif;font-weight:400;margin-bottom:2px;}
+  /* calendar */
+  .cal-s{background:var(--white);padding:5rem 0;}
+  .cl{display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start;}
+  .ce{border:1px solid rgba(200,145,58,0.18);min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--cream);gap:0.65rem;padding:2rem;text-align:center;}
+  .up-list{display:flex;flex-direction:column;}
+  .up-item{display:grid;grid-template-columns:68px 1fr auto;gap:1.1rem;align-items:center;padding:1rem 0;border-bottom:1px solid rgba(200,145,58,0.09);text-decoration:none;color:inherit;transition:padding-left 0.2s;}
+  .up-item:hover{padding-left:5px;}
+  .up-item:last-of-type{border-bottom:none;}
+  .ud{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--saffron);line-height:1;text-align:center;}
+  .um{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);text-align:center;}
+  .un{font-size:13px;font-weight:500;color:var(--brown);margin-bottom:2px;}
+  .ume{font-size:12px;color:var(--text-light);}
+  .ut{font-size:10px;letter-spacing:0.07em;text-transform:uppercase;padding:3px 9px;white-space:nowrap;}
+  .tr{background:rgba(212,82,26,0.07);color:var(--saffron);}
+  .ty{background:rgba(200,145,58,0.1);color:var(--gold);}
+  .tv{background:rgba(29,107,90,0.1);color:var(--teal);}
+  /* gmy banner */
+  .gmy-banner{background:linear-gradient(135deg,#8C3209 0%,#3D2B1F 100%);padding:1.5rem 2rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;border-left:4px solid var(--gold);margin-bottom:0;}
+  .gby{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-light);margin-bottom:0.35rem;}
+  .gbt{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--cream);margin-bottom:3px;}
+  .gbd{font-size:12px;color:rgba(251,246,238,0.65);line-height:1.6;font-weight:300;}
+  /* announce */
+  .ann-s{background:var(--cream-dark);padding:5rem 0;}
+  .ang{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+  .anc{background:var(--white);padding:1.6rem;border-bottom:2px solid transparent;transition:border-color 0.2s;text-decoration:none;color:inherit;display:block;}
+  .anc:hover{border-bottom-color:var(--gold);}
+  .and{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.35rem;}
+  .ant{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--brown);margin-bottom:0.35rem;line-height:1.3;}
+  .anb{font-size:12px;color:var(--text-light);line-height:1.7;font-weight:300;}
+  .ana{display:inline-block;margin-top:0.6rem;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:3px 9px;background:rgba(212,82,26,0.07);color:var(--saffron);}
+  /* register */
+  .reg-s{background:var(--saffron);padding:5rem 2rem;text-align:center;}
+  .re{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.7rem;}
+  .rt{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--white);margin-bottom:0.3rem;}
+  .rt em{font-style:italic;color:var(--gold-light);}
+  .rr{width:34px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent);margin:1rem auto;}
+  .rdesc{font-size:14px;color:rgba(255,255,255,0.7);max-width:480px;margin:0 auto 2.2rem;line-height:1.8;font-weight:300;}
+  .bw{display:inline-block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:13px 38px;background:var(--white);color:var(--saffron);text-decoration:none;transition:background 0.2s;}
+  .bw:hover{background:var(--cream);}
+  /* footer overrides */
+  .fg{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(200,145,58,0.15);}
+  .fb{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--cream);margin-bottom:0.7rem;}
+  .fbd{font-size:12px;color:var(--brown-light);line-height:1.75;font-weight:300;}
+  .fct{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.85rem;}
+  .fl{list-style:none;}
+  .fl li{margin-bottom:0.45rem;}
+  .fl a{font-size:12px;color:var(--brown-light);text-decoration:none;transition:color 0.2s;font-weight:300;}
+  .fl a:hover{color:var(--cream);}
+  /* main nav for homepage */
+  .hp-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(251,246,238,0.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(200,145,58,0.18);}
+  .nav-links{display:flex;gap:2rem;list-style:none;}
+  .nav-links a{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--saffron);}
+  @media(max-width:1024px){.rg{grid-template-columns:repeat(2,1fr);}.vcg{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:860px){.hp-nav,.main-nav{padding:1rem 1.5rem;}.nav-links,.nav-join{display:none;}.ag{grid-template-columns:1fr;gap:2rem;}.vi{grid-template-columns:1fr;}.yf{grid-template-columns:1fr;}.ys{grid-template-columns:1fr;}.cl{grid-template-columns:1fr;}.ang{grid-template-columns:1fr;}.fg{grid-template-columns:1fr 1fr;gap:2rem;}.h-stats{gap:2rem;}}
+  @media(max-width:600px){.rg,.vcg{grid-template-columns:1fr;}.vg{grid-template-columns:1fr;}.vp.full{grid-column:span 1;}.fg{grid-template-columns:1fr;}.tb{padding:0.85rem 0.9rem;font-size:10px;}.ut{display:none;}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="navbar">
+<nav class="hp-nav" id="navbar">
   <a href="#" class="nav-logo">
     <span class="nav-om">ॐ</span>
     <div class="nav-name">SSSVSS<span>Sri Sathya Sai Vedic Society · Singapore</span></div>
@@ -245,384 +172,267 @@
     <li><a href="#announcements">News</a></li>
     <li><a href="#register">Join</a></li>
   </ul>
-  <a href="https://srisathyasaivedicsocietysingapore.org/sssvss-registration/" class="nav-join">Register</a>
-  <button class="hamburger" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <a href="https://srisathyasaivedicsocietysingapore.org/sssvss-registration/" class="btn-saffron">Register</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-ring" style="width:780px;height:780px;"></div>
-  <div class="hero-ring" style="width:560px;height:560px;"></div>
-  <div class="hero-ring" style="width:340px;height:340px;"></div>
-  <div class="hero-bg-glow"></div>
-  <div class="hero-om-bg">ॐ</div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">Singapore · Vedic Society · Est. 2012</p>
-    <h1 class="hero-title">Where sacred <em>chanting</em><br>meets selfless <em>service</em></h1>
-    <p class="hero-title-sub">Sri Sathya Sai Vedic Society Singapore</p>
-    <div class="hero-rule"></div>
-    <p class="hero-desc">A community of devotees preserving Vedic traditions, nurturing spiritual values, and serving with love — guided by the teachings of Bhagawan Sri Sathya Sai Baba.</p>
-    <div class="hero-ctas">
-      <a href="#activities" class="btn-primary">Explore Activities</a>
-      <a href="#about" class="btn-ghost">About SSSVSS</a>
+  <div class="h-ring" style="width:760px;height:760px;"></div>
+  <div class="h-ring" style="width:540px;height:540px;"></div>
+  <div class="h-ring" style="width:320px;height:320px;"></div>
+  <div class="h-glow"></div>
+  <div class="h-om-bg">ॐ</div>
+  <div class="h-c">
+    <p class="h-ey">Singapore · Vedic Society · Est. 2012</p>
+    <h1 class="h-t">Where sacred <em>chanting</em><br>meets selfless <em>service</em></h1>
+    <p class="h-sub">Sri Sathya Sai Vedic Society Singapore</p>
+    <div class="h-rule"></div>
+    <p class="h-desc">A community of devotees preserving Vedic traditions, nurturing spiritual values, and serving with love — guided by the teachings of Bhagawan Sri Sathya Sai Baba.</p>
+    <div class="h-ctas">
+      <a href="#activities" class="btn-saffron">Explore Activities</a>
+      <a href="#about" class="btn-gold">About SSSVSS</a>
     </div>
-    <div class="hero-stats">
-      <div><div class="hero-stat-num">8</div><div class="hero-stat-lbl">Regular activities</div></div>
-      <div><div class="hero-stat-num">4</div><div class="hero-stat-lbl">Yearly events</div></div>
-      <div><div class="hero-stat-num">6</div><div class="hero-stat-lbl">Veda programmes</div></div>
-      <div><div class="hero-stat-num">20+</div><div class="hero-stat-lbl">Active volunteers</div></div>
+    <div class="h-stats">
+      <div><div class="h-sn">15</div><div class="h-sl">Regular activities</div></div>
+      <div><div class="h-sn">8</div><div class="h-sl">Yearly events</div></div>
+      <div><div class="h-sn">10</div><div class="h-sl">Weekly classes</div></div>
+      <div><div class="h-sn">20+</div><div class="h-sl">Active volunteers</div></div>
     </div>
   </div>
-  <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
+  <div class="h-scroll"><span>Scroll</span><div class="s-line"></div></div>
 </section>
 
 <!-- ABOUT -->
-<section class="about-section" id="about">
-  <div class="section-wrap">
-    <div class="about-grid">
+<section class="about-s" id="about">
+  <div class="page">
+    <div class="ag">
       <div class="reveal">
-        <blockquote class="about-quote">
+        <blockquote class="aq">
           "The vibrations produced by the utterance of the Mantra, uniting with the cosmic nāda in the universe, become one with Universal Consciousness."
           <cite>— Sri Sathya Sai Speaks, Vol. 17 · October 1984</cite>
         </blockquote>
-        <p class="about-body">Sri Sathya Sai Vedic Society Singapore (SSSVSS) was formed as an informal group conducting monthly Ekadasa Rudram — the chanting of Sri Rudram 11 times by 11 persons — to celebrate Nakshatra Arudhra, the birth star of Bhagawan Sri Sathya Sai Baba.</p>
-        <p class="about-body" style="margin-top:1rem;">Today the Society runs regular devotional activities, annual yagnas, Vedic classes for all ages, and community service — all rooted in Swami's five human values.</p>
+        <p class="ab">Sri Sathya Sai Vedic Society Singapore (SSSVSS) was formed as an informal group conducting monthly Ekadasa Rudram — Sri Rudram chanted 11 times by 11 persons on Nakshatra Arudhra, the birth star of Bhagawan Sri Sathya Sai Baba.</p>
+        <p class="ab" style="margin-top:0.9rem;">Today the Society runs 15 regular activities, 8 annual events, 10 weekly digital Vedic classes, and community service — all rooted in Swami's five human values.</p>
       </div>
       <div class="reveal">
-        <div class="values-grid">
-          <div class="value-pill"><div class="value-title">Sathya · Truth</div><div class="value-sub">Speak truth with love</div></div>
-          <div class="value-pill"><div class="value-title">Dharma · Righteousness</div><div class="value-sub">Act with integrity</div></div>
-          <div class="value-pill"><div class="value-title">Shanti · Peace</div><div class="value-sub">Cultivate inner stillness</div></div>
-          <div class="value-pill"><div class="value-title">Prema · Love</div><div class="value-sub">Serve all with devotion</div></div>
-          <div class="value-pill full"><div class="value-title">Ahimsa · Non-Violence</div><div class="value-sub">Harm no living being in thought, word, or deed</div></div>
+        <div class="vg">
+          <div class="vp"><div class="vpt">Sathya · Truth</div><div class="vps">Speak truth with love</div></div>
+          <div class="vp"><div class="vpt">Dharma · Righteousness</div><div class="vps">Act with integrity</div></div>
+          <div class="vp"><div class="vpt">Shanti · Peace</div><div class="vps">Cultivate inner stillness</div></div>
+          <div class="vp"><div class="vpt">Prema · Love</div><div class="vps">Serve all with devotion</div></div>
+          <div class="vp full"><div class="vpt">Ahimsa · Non-Violence</div><div class="vps">Harm no living being in thought, word, or deed</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- GMY ALERT BANNER -->
+<div class="gmy-banner">
+  <div style="flex:1;">
+    <div class="gby">Now Open · Centennial 2026</div>
+    <div class="gbt">Sri Gayatri Maha Yagna — 8–10 May 2026</div>
+    <div class="gbd">Field 2, 24 Geylang East Avenue 2, Singapore (Opposite Sri Sivan Temple) · Ritwiks &amp; Volunteers registration open.</div>
+  </div>
+  <a href="gmy-2026.html" class="btn-saffron">Full Details ↗</a>
+  <a href="https://tinyurl.com/SGMY-SG2026" target="_blank" class="btn-gold">Register ↗</a>
+</div>
+
 <!-- ACTIVITIES -->
 <div id="activities">
-
-  <div class="activities-header">
-    <p class="ah-kicker reveal">All 18 Programmes</p>
-    <h2 class="ah-title reveal">Our <em>Activities</em></h2>
-    <p class="ah-sub reveal">Browse all SSSVSS programmes — regular monthly gatherings, major annual events, and ongoing Vedic education for all ages.</p>
+  <div class="act-hdr">
+    <p class="ah-k reveal">All 33 Programmes</p>
+    <h2 class="ah-t reveal">Our <em>Activities</em></h2>
+    <p class="ah-s reveal">Browse all SSSVSS programmes across Regular Activities, Annual Events, and Weekly Vedic Classes.</p>
     <div class="tab-strip reveal">
-      <button class="tab-btn t-regular" onclick="switchTab('regular',this)" id="tb-regular">● Regular Activities (8)</button>
-      <button class="tab-btn" onclick="switchTab('yearly',this)" id="tb-yearly">● Yearly Events (4)</button>
-      <button class="tab-btn" onclick="switchTab('veda',this)" id="tb-veda">● Veda Classes (6)</button>
+      <button class="tb tr" onclick="switchTab('r',this)" id="tb-r">● Regular Activities (8)</button>
+      <button class="tb" onclick="switchTab('y',this)" id="tb-y">● Yearly Events (8)</button>
+      <button class="tb" onclick="switchTab('v',this)" id="tb-v">● Veda Classes (10)</button>
     </div>
   </div>
 
-  <div class="panels-bg">
+  <div class="panels">
 
     <!-- REGULAR -->
-    <div class="act-panel active" id="panel-regular">
-      <div class="regular-grid">
-        <a href="ekadasa-rudram.html" class="reg-card reveal">
-          <div class="reg-icon">🕉</div>
-          <div class="reg-freq">Twice Monthly · Nakshatra Arudhra</div>
-          <div class="reg-name">Ekadasa Rudram</div>
-          <div class="reg-desc">Sri Rudram chanted 11 times by 11 chanters — the founding and most sacred practice of SSSVSS, held at members' homes.</div>
-          <span class="reg-link">View page →</span>
-        </a>
-        <a href="devi-mahatmyam.html" class="reg-card reveal">
-          <div class="reg-icon">🌸</div>
-          <div class="reg-freq">Monthly</div>
-          <div class="reg-name">Devi Mahatmyam</div>
-          <div class="reg-desc">Sacred recitation of the Devi Mahatmyam (Durga Saptashati) — invoking the divine mother's grace and blessings.</div>
-          <span class="reg-link">View page →</span>
-        </a>
-        <a href="monthly-bhajans.html" class="reg-card reveal">
-          <div class="reg-icon">🎶</div>
-          <div class="reg-freq">Monthly</div>
-          <div class="reg-name">Monthly Bhajans</div>
-          <div class="reg-desc">Devotional singing at members' homes — an evening of collective bhajans, prayers, and prasadam.</div>
-          <span class="reg-link">View page →</span>
-        </a>
-        <a href="homa-sengkang.html" class="reg-card reveal">
-          <div class="reg-icon">🔥</div>
-          <div class="reg-freq">Monthly · Sai Temple Sengkang</div>
-          <div class="reg-name">Monthly Homa</div>
-          <div class="reg-desc">Fire sacrifice (Homa) performed monthly at the Sai Temple in Sengkang — open to all devotees.</div>
-          <span class="reg-link">View page →</span>
-        </a>
-        <a href="balavikas-bhajans.html" class="reg-card reveal">
-          <div class="reg-icon">👧</div>
-          <div class="reg-freq">Monthly · Sai Temple</div>
-          <div class="reg-name">Balavikas Bhajans</div>
-          <div class="reg-desc">Children lead bhajans at the Sai Temple — nurturing devotion and confidence in our young devotees.</div>
-          <span class="reg-link">View page →</span>
-        </a>
-        <a href="sathya-narayana-pooja.html" class="reg-card reveal">
-          <div class="reg-icon">🪔</div>
-          <div class="reg-freq">Monthly</div>
-          <div class="reg-name">Sathya Narayana Pooja</div>
-          <div class="reg-desc">Monthly Sathya Narayana Vratham and Pooja at members' homes, invoking Lord Vishnu's blessings for all.</div>
-          <span class="reg-link">View page →</span>
-        </a>
-        <a href="dry-food-drive.html" class="reg-card reveal">
-          <div class="reg-icon">🤝</div>
-          <div class="reg-freq">Monthly · Community Seva</div>
-          <div class="reg-name">Dry Food Collection Drive</div>
-          <div class="reg-desc">Monthly collection and distribution of dry food essentials to families in need — Swami's seva made real.</div>
-          <span class="reg-link">View page →</span>
-        </a>
-        <a href="nagarasankirtan.html" class="reg-card reveal">
-          <div class="reg-icon">🚶</div>
-          <div class="reg-freq">Weekly</div>
-          <div class="reg-name">Nagarasankirtan</div>
-          <div class="reg-desc">Early morning devotional procession through the neighbourhood — spreading divine vibrations at dawn every week.</div>
-          <span class="reg-link">View page →</span>
-        </a>
+    <div class="panel active" id="panel-r">
+      <div class="rg">
+        <a href="ekadasa-rudram.html" class="rc reveal"><div class="ri">🕉</div><div class="rq">Twice Monthly · Home Hosted</div><div class="rn">Ekadasa Rudram</div><div class="rd">Sri Rudram chanted 11×11 — the founding practice of SSSVSS.</div><span class="rl">View →</span></a>
+        <a href="devi-mahatmyam.html" class="rc reveal"><div class="ri">🌸</div><div class="rq">Monthly · Home Hosted</div><div class="rn">Devi Mahatmyam</div><div class="rd">Durga Saptashati recitation at members' homes.</div><span class="rl">View →</span></a>
+        <a href="monthly-bhajans.html" class="rc reveal"><div class="ri">🎶</div><div class="rq">Monthly · Sri Srinivasa Perumal Temple</div><div class="rn">Monthly Bhajans</div><div class="rd">Devotional singing at PGP Function Hall (Level 3).</div><span class="rl">View →</span></a>
+        <a href="homa-shirdi.html" class="rc reveal"><div class="ri">🔥</div><div class="rq">Monthly · Sri Shirdi Sai Temple</div><div class="rn">Monthly Homa</div><div class="rd">Sacred fire sacrifice at Sri Shirdi Sai Temple.</div><span class="rl">View →</span></a>
+        <a href="balavikas-bhajans.html" class="rc reveal"><div class="ri">👧</div><div class="rq">Monthly · Sri Shirdi Sai Temple</div><div class="rn">Balavikas Bhajans</div><div class="rd">Children-led bhajans at Sri Shirdi Sai Temple.</div><span class="rl">View →</span></a>
+        <a href="sathya-narayana-pooja.html" class="rc reveal"><div class="ri">🪔</div><div class="rq">Monthly · Home Hosted</div><div class="rn">Sathya Narayana Pooja</div><div class="rd">Monthly Vratham and Pooja at members' homes.</div><span class="rl">View →</span></a>
+        <a href="dry-food-drive.html" class="rc reveal"><div class="ri">🤝</div><div class="rq">Monthly · Sri Srinivasa Perumal Temple</div><div class="rn">Dry Food Collection Drive</div><div class="rd">Community seva — collection and distribution at PGP Hall L3.</div><span class="rl">View →</span></a>
+        <a href="nagarasankirtan.html" class="rc reveal"><div class="ri">🚶</div><div class="rq">Weekly · Sunday · Sri Srinivasa Perumal Temple</div><div class="rn">Nagarasankirtan</div><div class="rd">Early morning devotional procession every Sunday.</div><span class="rl">View →</span></a>
       </div>
     </div>
 
     <!-- YEARLY -->
-    <div class="act-panel" id="panel-yearly">
-      <div class="yearly-featured">
-        <a href="gmy-2026.html" class="yearly-card reveal">
-          <span class="yearly-badge">Centennial 2026 · Registration Open</span>
-          <div class="yearly-icon">🔥</div>
-          <div class="yearly-when">8–10 May 2026 · Holy Tree Sri Subramaniar Temple, Sengkang</div>
-          <div class="yearly-name">Sri Gayatri Maha Yagna</div>
-          <div class="yearly-desc">The annual large-scale fire sacrifice of the Gayatri Mantra. GMY 2026 is a special centennial edition — the most significant SSSVSS event of the year.</div>
-          <div class="yearly-subs">
-            <div class="yearly-sub">Japa Sankalpa &amp; Daily Sadhana</div>
-            <div class="yearly-sub">Live Japa count &amp; running totals</div>
-            <div class="yearly-sub">Ritwik &amp; Volunteer registration</div>
-            <div class="yearly-sub">SGMY Registration portal</div>
-            <div class="yearly-sub">Past years photos &amp; videos</div>
+    <div class="panel" id="panel-y">
+      <div class="yf">
+        <a href="gmy-2026.html" class="yc reveal">
+          <span class="yb">Centennial 2026 · Registration Open</span>
+          <div class="yi">🔥</div>
+          <div class="yw">8–10 May 2026 · Geylang East Ave 2 (opp Sri Sivan Temple)</div>
+          <div class="yn">Sri Gayatri Maha Yagna</div>
+          <div class="yd">Annual Gayatri Homa — GMY 2026 is a centennial edition with Blood Donation Drive on Day 2. 90-day Japa sadhana prior to event.</div>
+          <div class="ysubs">
+            <div class="ysi">Chandi Homam · Devi Mahatmyam · Ekadasa Rudram (Day 1–2)</div>
+            <div class="ysi">Sri Gayatri Maha Yagna Homam &amp; Tharpanam (Day 3)</div>
+            <div class="ysi">Blood Donation Drive (Day 2 · 9AM–3PM)</div>
+            <div class="ysi">90-day Japa count submissions &amp; live totals</div>
           </div>
-          <span class="yearly-link">View full page →</span>
+          <span class="rl" style="color:var(--gold-light);margin-top:1rem;display:inline-block;">Full page →</span>
         </a>
-        <a href="akhanda-bhajans.html" class="yearly-card reveal">
-          <span class="yearly-badge">Annual · November</span>
-          <div class="yearly-icon">🎵</div>
-          <div class="yearly-when">2nd Weekend of November · 6:00 PM Saturday – 6:00 PM Sunday</div>
-          <div class="yearly-name">Akhanda Bhajans</div>
-          <div class="yearly-desc">A sacred 24-hour, non-stop devotional singing marathon held every November — an unbroken river of song and surrender offered to Bhagawan.</div>
-          <div class="yearly-subs">
-            <div class="yearly-sub">Volunteer singing slot sign-up</div>
-            <div class="yearly-sub">24-hour schedule &amp; coordination</div>
-            <div class="yearly-sub">Photos from past years</div>
+        <a href="90-day-prayers.html" class="yc reveal">
+          <span class="yb">Daily · Prior to SGMY &amp; Janma Jayanthi</span>
+          <div class="yi">🙏</div>
+          <div class="yw">6:30 AM – 7:00 AM · Online · 90 Days</div>
+          <div class="yn">90 Days of Daily Prayers</div>
+          <div class="yd">Digital morning sadhana — Omkaram, Suprabhatam, Veda Parayanam, Ashtottram, Gayatri Mantra, Mangal Arathi, Sai Gayatri. Digital altar hosted by rotating volunteers.</div>
+          <div class="ysubs">
+            <div class="ysi">Physical Sankalpa ~Chinese New Year period</div>
+            <div class="ysi">Two digital sankalpas within 45 days of SGMY</div>
+            <div class="ysi">90-day Gayatri Japa sadhana with count submissions</div>
           </div>
-          <span class="yearly-link">View full page →</span>
+          <span class="rl" style="color:var(--gold-light);margin-top:1rem;display:inline-block;">Full page →</span>
         </a>
       </div>
-      <div class="yearly-standard">
-        <a href="janma-jayanthi.html" class="yearly-card reveal">
-          <div class="yearly-icon">⭐</div>
-          <div class="yearly-when">Mid November – Mid December · Virchiga Ravi / Aarudra Nakshatra</div>
-          <div class="yearly-name">Swami Janma Jayanthi</div>
-          <div class="yearly-desc">The celebration of Bhagawan Sri Sathya Sai Baba's birth star — a day of prayers, bhajans, Abhishekam, and deep devotion shared by the SSSVSS family.</div>
-          <span class="yearly-link">View page →</span>
+      <div class="ys">
+        <a href="janma-jayanthi.html" class="yc reveal">
+          <div class="yi">⭐</div>
+          <div class="yw">Annual · Nov–Dec · Virchiga Ravi / Aarudra Nakshatra</div>
+          <div class="yn">Swami Janma Jayanthi</div>
+          <div class="yd">Bhagawan's birth star celebration at PGP Function Hall (L3), Sri Srinivasa Perumal Temple. Country-level participation for Swami's Birthday.</div>
         </a>
-        <a href="maha-sivarathri.html" class="yearly-card reveal">
-          <div class="yearly-icon">🌙</div>
-          <div class="yearly-when">Annual · Maha Sivarathri · 4 Kalas</div>
-          <div class="yearly-name">Maha Sivarathri — Ekadasa Rudra Abhiseka</div>
-          <div class="yearly-desc">Ekadasa Rudra Abhiseka performed across the four auspicious kala periods of the sacred night of Maha Sivarathri.</div>
-          <span class="yearly-link">View page →</span>
+        <a href="guru-poornima.html" class="yc reveal">
+          <div class="yi">🌕</div>
+          <div class="yw">Annual · Ashadha Purnima (Jul/Aug)</div>
+          <div class="yn">Guru Poornima</div>
+          <div class="yd">Annual celebration of the Guru's grace at PGP Function Hall (L3), Sri Srinivasa Perumal Temple.</div>
+        </a>
+        <a href="maha-sivarathri.html" class="yc reveal">
+          <div class="yi">🌙</div>
+          <div class="yw">Annual · Four Kalas · Moulmein Centre L3</div>
+          <div class="yn">Maha Sivarathri</div>
+          <div class="yd">Ekadasa Rudra Abhiseka performed 4× through the sacred night at Moulmein Centre Level 3.</div>
+        </a>
+        <a href="akhanda-bhajans.html" class="yc reveal">
+          <div class="yi">🎵</div>
+          <div class="yw">Annual · 2nd Weekend November · 24 Hours</div>
+          <div class="yn">Akhanda Bhajans</div>
+          <div class="yd">Country-level 24-hour non-stop bhajan participation. 6PM Saturday to 6PM Sunday.</div>
+        </a>
+        <a href="puttaparthi-yatra.html" class="yc reveal">
+          <div class="yi">✈️</div>
+          <div class="yw">Annual · Prasanthi Nilayam, India</div>
+          <div class="yn">Puttaparthi Yatra</div>
+          <div class="yd">Annual pilgrimage trips to Bhagawan's divine abode — open to all SSSVSS devotees.</div>
         </a>
       </div>
     </div>
 
     <!-- VEDA -->
-    <div class="act-panel" id="panel-veda">
-
-      <div class="veda-intro reveal">
-        <div class="veda-intro-text">
-          <p>The Veda School of SSSVSS offers classes from Tuesday to Sunday, covering Vedic programmes for children, youth, and adults. Our dedicated Gurus guide each student with patience, devotion, and deep knowledge of the tradition.</p>
-          <p>All classes are held in Singapore. New batches start periodically throughout the year — all levels welcome, from complete beginners to advanced practitioners.</p>
+    <div class="panel" id="panel-v">
+      <div class="vi reveal">
+        <div class="vit">
+          <p>SSSVSS conducts 10 active weekly digital classes covering Vedic texts, devotional programmes, and value education for children, youth, and adults. All classes are online.</p>
+          <p>New students are always welcome. Register using the link below — classes run from Tuesday to Sunday.</p>
         </div>
-        <blockquote class="veda-quote">
+        <blockquote class="viq">
           "The study of the Vedas is not merely an intellectual exercise — it is a spiritual sadhana that transforms the chanter from within."
           <cite>— Bhagawan Sri Sathya Sai Baba</cite>
         </blockquote>
       </div>
-
-      <div style="margin-bottom:1rem;" class="reveal">
-        <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(200,145,58,0.5);margin-bottom:0.75rem;">Our Gurus</div>
-        <div class="gurus-row">
-          <a href="our-gurus.html" class="guru-card">
-            <div class="guru-av">RK</div>
-            <div class="guru-name">Bro Ravi K Ramasamy</div>
-            <div class="guru-role">President &amp; Founding Guru</div>
-          </a>
-          <a href="our-gurus.html" class="guru-card">
-            <div class="guru-av">G2</div>
-            <div class="guru-name">Update Name</div>
-            <div class="guru-role">Vedic Class Lead</div>
-          </a>
-          <a href="our-gurus.html" class="guru-card">
-            <div class="guru-av">G3</div>
-            <div class="guru-name">Update Name</div>
-            <div class="guru-role">Rudram &amp; Suktham</div>
-          </a>
-          <a href="our-gurus.html" class="guru-card">
-            <div class="guru-av">+</div>
-            <div class="guru-name">All Gurus</div>
-            <div class="guru-role">View profiles →</div>
-          </a>
+      <div style="margin-bottom:1px;" class="reveal">
+        <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(200,145,58,0.5);margin-bottom:0.7rem;">Our Gurus</div>
+        <div class="vgr">
+          <a href="our-gurus.html" class="gc"><div class="gav">RK</div><div class="gn">Bro Ravi K Ramasamy</div><div class="gr">President &amp; Founding Guru</div></a>
+          <a href="our-gurus.html" class="gc"><div class="gav">G2</div><div class="gn">Update Name</div><div class="gr">Vedic Class Lead</div></a>
+          <a href="our-gurus.html" class="gc"><div class="gav">G3</div><div class="gn">Update Name</div><div class="gr">Rudram &amp; Suktham</div></a>
+          <a href="our-gurus.html" class="gc"><div class="gav">+</div><div class="gn">All Gurus</div><div class="gr">View profiles →</div></a>
         </div>
       </div>
-
-      <div class="veda-grid reveal">
-        <a href="class-schedule.html" class="veda-card">
-          <div class="veda-card-icon">📅</div>
-          <div class="veda-card-audience">All students · Tue – Sun</div>
-          <div class="veda-card-name">Current Classes &amp; Schedule</div>
-          <div class="veda-card-desc">Live timetable of all active Vedic classes — Suktham, Rudram, Durga Sapthasathi, and more. Updated each term.</div>
-        </a>
-        <a href="balavikas.html" class="veda-card">
-          <div class="veda-card-icon">👧</div>
-          <div class="veda-card-audience">Children · Ages 5–12</div>
-          <div class="veda-card-name">Balavikas &amp; Satyanadam</div>
-          <div class="veda-card-desc">Value-based spiritual education for children through stories, bhajans, and activities rooted in Swami's teachings.</div>
-        </a>
-        <a href="teenvikas.html" class="veda-card">
-          <div class="veda-card-icon">🧑</div>
-          <div class="veda-card-audience">Youth · Ages 13–18</div>
-          <div class="veda-card-name">Teenvikas</div>
-          <div class="veda-card-desc">Character and spiritual development for teenagers — building values, leadership, and devotion for the next generation.</div>
-        </a>
-        <a href="study-circle.html" class="veda-card">
-          <div class="veda-card-icon">📖</div>
-          <div class="veda-card-audience">Adults</div>
-          <div class="veda-card-name">Study Circle — Adults</div>
-          <div class="veda-card-desc">In-depth study of Vedic texts, Swami's discourses, and spiritual topics in a supportive group setting.</div>
-        </a>
-        <a href="class-registration.html" class="veda-card">
-          <div class="veda-card-icon">📋</div>
-          <div class="veda-card-audience">New students</div>
-          <div class="veda-card-name">Class Registration</div>
-          <div class="veda-card-desc">Register for Suktham, Rudram, Durga Sapthasathi, or any programme. New batches always welcome throughout the year.</div>
-        </a>
-        <a href="our-gurus.html" class="veda-card">
-          <div class="veda-card-icon">🙏</div>
-          <div class="veda-card-audience">All</div>
-          <div class="veda-card-name">Our Gurus</div>
-          <div class="veda-card-desc">Meet the dedicated Gurus guiding our Vedic classes — their backgrounds, qualifications, and areas of expertise.</div>
-        </a>
+      <div class="vcg reveal">
+        <a href="class-schedule.html" class="vcc"><div class="vci">📅</div><div class="vca">All students · Tue–Sun · Online</div><div class="vcn">Weekly Class Schedule</div><div class="vcd">10 active classes with GDrive resources. Completed &amp; planned classes listed.</div></a>
+        <a href="balavikas.html" class="vcc"><div class="vci">👧</div><div class="vca">Children · Ages 5–12 · Sunday</div><div class="vcn">Balavikas &amp; Satyanadam</div><div class="vcd">Value-based spiritual education for children. Online every Sunday.</div></a>
+        <a href="teenvikas.html" class="vcc"><div class="vci">🧑</div><div class="vca">Youth · Ages 13–18 · Sunday</div><div class="vcn">Teenvikas</div><div class="vcd">Character and spiritual development for teenagers. Online every Sunday.</div></a>
+        <a href="study-circle.html" class="vcc"><div class="vci">📖</div><div class="vca">Adults</div><div class="vcn">Study Circle — Adults</div><div class="vcd">In-depth study of Vedic texts and Swami's discourses for adult devotees.</div></a>
+        <a href="class-registration.html" class="vcc"><div class="vci">📋</div><div class="vca">New students</div><div class="vcn">Class Registration</div><div class="vcd">Register for any class — all levels welcome, beginners to advanced.</div></a>
+        <a href="our-gurus.html" class="vcc"><div class="vci">🙏</div><div class="vca">All</div><div class="vcn">Our Gurus</div><div class="vcd">Meet the Gurus and teachers guiding our Vedic classes.</div></a>
       </div>
-
-      <div class="veda-reg-bar reveal">
-        <div class="vrb-text">
-          <strong>Ready to begin your Vedic journey?</strong>
-          Classes run Tuesday to Sunday. All ages and levels welcome.
-        </div>
+      <div class="vrb reveal">
+        <div class="vrbt"><strong>Ready to begin your Vedic journey?</strong>Classes run Tuesday to Sunday online. All ages and levels welcome.</div>
         <a href="https://tinyurl.com/sssvssclassregistration" target="_blank" class="btn-teal">Register for Classes ↗</a>
       </div>
+    </div>
 
-    </div><!-- /panel-veda -->
-  </div><!-- /panels-bg -->
-</div><!-- /activities -->
+  </div>
+</div>
 
 <!-- CALENDAR -->
-<section class="calendar-strip" id="calendar">
-  <div class="section-wrap">
-    <div style="margin-bottom:2.5rem;" class="reveal">
-      <p style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">What's Coming Up</p>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:300;color:var(--brown);">Upcoming <em style="font-style:italic;color:var(--saffron)">Events</em></h2>
-      <div style="width:36px;height:1px;margin-top:0.9rem;background:linear-gradient(90deg,var(--gold),transparent);"></div>
+<section class="cal-s" id="calendar">
+  <div class="page">
+    <div style="margin-bottom:2.25rem;" class="reveal">
+      <p style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">What's Coming Up</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.2vw,2.6rem);font-weight:300;color:var(--brown);">Upcoming <em style="font-style:italic;color:var(--saffron)">Events</em></h2>
+      <div style="width:30px;height:1px;margin-top:0.75rem;background:linear-gradient(90deg,var(--gold),transparent);"></div>
     </div>
-    <div class="cal-layout reveal">
-      <div class="cal-embed">
-        <div class="cal-icon">📅</div>
-        <div class="cal-title">SSSVSS Google Calendar</div>
-        <div class="cal-desc">Replace with your embedded Google Calendar showing all upcoming events across all activities.</div>
-        <div class="cal-code">&lt;iframe src="calendar.google.com/..." /&gt;</div>
+    <div class="cl reveal">
+      <div class="ce">
+        <div style="font-size:36px;opacity:0.2;">📅</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--brown);">SSSVSS Google Calendar</div>
+        <div style="font-size:12px;color:var(--text-light);max-width:240px;line-height:1.7;text-align:center;">Replace with your embedded Google Calendar.</div>
+        <div style="font-size:10px;color:var(--gold);font-family:monospace;background:rgba(200,145,58,0.07);padding:5px 10px;">&lt;iframe src="calendar.google.com/..." /&gt;</div>
       </div>
-      <div class="upcoming-list">
-        <a href="gmy-2026.html" class="up-item">
-          <div><div class="up-day">8</div><div class="up-mon">May 2026</div></div>
-          <div><div class="up-name">Sri Gayatri Maha Yagna — Day 1</div><div class="up-meta">Holy Tree Sri Subramaniar Temple, Sengkang · 8:00 AM</div></div>
-          <span class="up-tag t-y">Yearly</span>
-        </a>
-        <a href="gmy-2026.html" class="up-item">
-          <div><div class="up-day">9–10</div><div class="up-mon">May</div></div>
-          <div><div class="up-name">Sri Gayatri Maha Yagna — Days 2 &amp; 3</div><div class="up-meta">Maha Homa · Purnahuti · Annadanam</div></div>
-          <span class="up-tag t-y">Yearly</span>
-        </a>
-        <a href="ekadasa-rudram.html" class="up-item">
-          <div><div class="up-day">24</div><div class="up-mon">May</div></div>
-          <div><div class="up-name">Ekadasa Rudram</div><div class="up-meta">Hosting available — volunteer your home · 8:00 AM</div></div>
-          <span class="up-tag t-r">Regular</span>
-        </a>
-        <a href="nagarasankirtan.html" class="up-item">
-          <div><div class="up-day">Sun</div><div class="up-mon">Weekly</div></div>
-          <div><div class="up-name">Nagarasankirtan</div><div class="up-meta">Early morning · Neighbourhood procession</div></div>
-          <span class="up-tag t-r">Regular</span>
-        </a>
-        <a href="class-schedule.html" class="up-item">
-          <div><div class="up-day">Tue–</div><div class="up-mon">Sun</div></div>
-          <div><div class="up-name">Vedic Classes — Ongoing</div><div class="up-meta">Suktham · Rudram · Balavikas · Study Circle</div></div>
-          <span class="up-tag t-v">Veda</span>
-        </a>
-        <div style="margin-top:1.25rem;">
-          <a href="https://calendar.google.com" target="_blank" class="btn-ghost" style="font-size:11px;">View Full Calendar ↗</a>
-        </div>
+      <div class="up-list">
+        <a href="gmy-2026.html" class="up-item"><div><div class="ud">8–10</div><div class="um">May 2026</div></div><div><div class="un">Sri Gayatri Maha Yagna 2026</div><div class="ume">Field 2, 24 Geylang East Ave 2 · Opp Sri Sivan Temple</div></div><span class="ut ty">Yearly</span></a>
+        <a href="nagarasankirtan.html" class="up-item"><div><div class="ud">Sun</div><div class="um">Weekly</div></div><div><div class="un">Nagarasankirtan</div><div class="ume">Sri Srinivasa Perumal Temple · 5:30 AM</div></div><span class="ut tr">Regular</span></a>
+        <a href="monthly-bhajans.html" class="up-item"><div><div class="ud">TBC</div><div class="um">Monthly</div></div><div><div class="un">Monthly Bhajans</div><div class="ume">PGP Function Hall (L3) · Sri Srinivasa Perumal Temple</div></div><span class="ut tr">Regular</span></a>
+        <a href="class-schedule.html" class="up-item"><div><div class="ud">Tue–</div><div class="um">Sun</div></div><div><div class="un">Weekly Digital Classes (10 Active)</div><div class="ume">Online · Rudram · BG · Lalitha · Balavikas · Teenvikas and more</div></div><span class="ut tv">Veda</span></a>
+        <a href="90-day-prayers.html" class="up-item"><div><div class="ud">Daily</div><div class="um">6:30 AM</div></div><div><div class="un">90 Days of Daily Prayers</div><div class="ume">Online · Prior to SGMY · Digital altar</div></div><span class="ut ty">Sadhana</span></a>
+        <div style="margin-top:1.1rem;"><a href="https://calendar.google.com" target="_blank" class="btn-gold" style="font-size:11px;">View Full Calendar ↗</a></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ANNOUNCEMENTS -->
-<section class="announce-section" id="announcements">
-  <div class="section-wrap">
-    <div style="margin-bottom:2.5rem;" class="reveal">
-      <p style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">Latest from SSSVSS</p>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:300;color:var(--brown);">News &amp; <em style="font-style:italic;color:var(--saffron)">Announcements</em></h2>
-      <div style="width:36px;height:1px;margin-top:0.9rem;background:linear-gradient(90deg,var(--gold),transparent);"></div>
+<section class="ann-s" id="announcements">
+  <div class="page">
+    <div style="margin-bottom:2.25rem;" class="reveal">
+      <p style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">Latest from SSSVSS</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.2vw,2.6rem);font-weight:300;color:var(--brown);">News &amp; <em style="font-style:italic;color:var(--saffron)">Announcements</em></h2>
+      <div style="width:30px;height:1px;margin-top:0.75rem;background:linear-gradient(90deg,var(--gold),transparent);"></div>
     </div>
-    <div class="announce-grid">
-      <a href="gmy-2026.html" class="ann-card reveal">
-        <div class="ann-date">April 2026 · GMY</div>
-        <div class="ann-title">GMY 2026 Volunteer &amp; Ritwik Registration Now Open</div>
-        <div class="ann-body">Sri Gayatri Maha Yagna 2026 — part of Bhagawan's Centennial. Ritwiks and Volunteers, register now for 8–10 May at Sengkang.</div>
-        <span class="ann-tag">Yearly Event</span>
-      </a>
-      <a href="ekadasa-rudram.html" class="ann-card reveal">
-        <div class="ann-date">April 2026 · Ekadasa Rudram</div>
-        <div class="ann-title">Hosting Slots Open — May &amp; June 2026</div>
-        <div class="ann-body">Homes are needed to host Ekadasa Rudram in May and June. A great blessing for the host family — submit interest via the page.</div>
-        <span class="ann-tag">Regular Activity</span>
-      </a>
-      <a href="class-registration.html" class="ann-card reveal">
-        <div class="ann-date">March 2026 · Veda School</div>
-        <div class="ann-title">New Intake Open — All Vedic Programmes</div>
-        <div class="ann-body">New batch registrations open for Suktham, Rudram, Balavikas, Teenvikas, and Study Circle. Classes run Tuesday to Sunday.</div>
-        <span class="ann-tag">Veda Classes</span>
-      </a>
+    <div class="ang">
+      <a href="gmy-2026.html" class="anc reveal"><div class="and">April 2026 · GMY 2026</div><div class="ant">Ritwik &amp; Volunteer Registration Now Open</div><div class="anb">GMY 2026 as part of Bhagawan's Centennial — 8–10 May at Field 2, 24 Geylang East Avenue 2, Singapore.</div><span class="ana">Yearly Event</span></a>
+      <a href="90-day-prayers.html" class="anc reveal"><div class="and">April 2026 · Sadhana</div><div class="ant">90-Day Daily Prayers &amp; Japa Sadhana Underway</div><div class="anb">Join the daily 6:30 AM online prayer session and submit your Gayatri Japa count for the collective SGMY offering.</div><span class="ana">Daily Sadhana</span></a>
+      <a href="class-schedule.html" class="anc reveal"><div class="and">April 2026 · Veda Classes</div><div class="ant">10 Weekly Classes Active — New Students Welcome</div><div class="anb">Rudram, Bhagavad Gita, Lalitha Sahasranamam, Balavikas and more running online Tue–Sun. Register now.</div><span class="ana">Veda Classes</span></a>
     </div>
   </div>
 </section>
 
 <!-- REGISTER -->
-<section class="register-section" id="register">
-  <p class="reg-ey">Become Part of the Family</p>
-  <h2 class="reg-title">Join <em>SSSVSS</em></h2>
-  <div class="reg-rule"></div>
-  <p class="reg-desc">Whether you wish to learn the Vedas, join a devotional activity, serve the community, or simply be part of Swami's family — there is a place for you here.</p>
-  <a href="https://srisathyasaivedicsocietysingapore.org/sssvss-registration/" class="btn-white">Register with SSSVSS ↗</a>
+<section class="reg-s" id="register">
+  <p class="re">Become Part of the Family</p>
+  <h2 class="rt">Join <em>SSSVSS</em></h2>
+  <div class="rr"></div>
+  <p class="rdesc">Whether you seek to learn the Vedas, join a devotional activity, serve the community, or simply be part of Swami's family — there is a place for you here.</p>
+  <a href="https://srisathyasaivedicsocietysingapore.org/sssvss-registration/" class="bw">Register with SSSVSS ↗</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-grid">
+  <div class="fg">
+    <div><div class="fb">Sri Sathya Sai Vedic Society Singapore</div><p class="fbd">A service-oriented, non-profit society rooted in the teachings of Bhagawan Sri Sathya Sai Baba. Dedicated to Vedic education, devotion, and selfless service in Singapore since 2012.</p></div>
     <div>
-      <div class="f-brand-name">Sri Sathya Sai Vedic Society Singapore</div>
-      <p class="f-brand-desc">A service-oriented, non-profit society rooted in the teachings of Bhagawan Sri Sathya Sai Baba. Dedicated to Vedic education, devotion, and selfless service in Singapore since 2012.</p>
-    </div>
-    <div>
-      <div class="f-col-title">Regular Activities</div>
-      <ul class="f-links">
+      <div class="fct">Regular Activities</div>
+      <ul class="fl">
         <li><a href="ekadasa-rudram.html">Ekadasa Rudram</a></li>
         <li><a href="devi-mahatmyam.html">Devi Mahatmyam</a></li>
         <li><a href="monthly-bhajans.html">Monthly Bhajans</a></li>
-        <li><a href="homa-sengkang.html">Monthly Homa</a></li>
+        <li><a href="homa-shirdi.html">Monthly Homa</a></li>
         <li><a href="balavikas-bhajans.html">Balavikas Bhajans</a></li>
         <li><a href="sathya-narayana-pooja.html">Sathya Narayana Pooja</a></li>
         <li><a href="dry-food-drive.html">Dry Food Drive</a></li>
@@ -630,78 +440,51 @@
       </ul>
     </div>
     <div>
-      <div class="f-col-title">Yearly Events</div>
-      <ul class="f-links">
+      <div class="fct">Yearly Events</div>
+      <ul class="fl">
         <li><a href="gmy-2026.html">Gayatri Maha Yagna</a></li>
+        <li><a href="90-day-prayers.html">90-Day Daily Prayers</a></li>
         <li><a href="janma-jayanthi.html">Janma Jayanthi</a></li>
+        <li><a href="guru-poornima.html">Guru Poornima</a></li>
         <li><a href="maha-sivarathri.html">Maha Sivarathri</a></li>
         <li><a href="akhanda-bhajans.html">Akhanda Bhajans</a></li>
+        <li><a href="puttaparthi-yatra.html">Puttaparthi Yatra</a></li>
       </ul>
-      <div class="f-col-title" style="margin-top:1.5rem;">Veda Classes</div>
-      <ul class="f-links">
-        <li><a href="class-schedule.html">Schedule</a></li>
+    </div>
+    <div>
+      <div class="fct">Veda Classes</div>
+      <ul class="fl">
+        <li><a href="class-schedule.html">Weekly Schedule</a></li>
         <li><a href="balavikas.html">Balavikas &amp; Satyanadam</a></li>
         <li><a href="teenvikas.html">Teenvikas</a></li>
         <li><a href="study-circle.html">Study Circle</a></li>
         <li><a href="our-gurus.html">Our Gurus</a></li>
         <li><a href="class-registration.html">Register</a></li>
       </ul>
-    </div>
-    <div>
-      <div class="f-col-title">Connect</div>
-      <ul class="f-links">
+      <div class="fct" style="margin-top:1.25rem;">Connect</div>
+      <ul class="fl">
         <li><a href="https://www.youtube.com/c/SriSathyaSaiVedicSocietySingapore" target="_blank">YouTube</a></li>
-        <li><a href="https://www.srisathyasaiglobalcouncil.org/" target="_blank">Global Council</a></li>
         <li><a href="https://tinyurl.com/SGMY-SG2026" target="_blank">GMY 2026 Registration</a></li>
-        <li><a href="https://srisathyasaivedicsocietysingapore.org/sssvss-registration/">Join SSSVSS</a></li>
         <li><a href="https://srisathyasaivedicsocietysingapore.org/gmy2026/" target="_blank">GMY Database</a></li>
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>© 2026 Sri Sathya Sai Vedic Society Singapore</span>
-    <span>Sai Ram 🙏</span>
-  </div>
+  <div class="footer-bottom"><span>© 2026 Sri Sathya Sai Vedic Society Singapore</span><span>Sai Ram 🙏</span></div>
 </footer>
 
 <script>
-  function switchTab(tab, btn) {
-    ['regular','yearly','veda'].forEach(t => {
-      document.getElementById('panel-' + t).classList.remove('active');
-      const tb = document.getElementById('tb-' + t);
-      tb.className = 'tab-btn';
+  function switchTab(t,btn){
+    ['r','y','v'].forEach(x=>{
+      document.getElementById('panel-'+x).classList.remove('active');
+      document.getElementById('tb-'+x).className='tb';
     });
-    document.getElementById('panel-' + tab).classList.add('active');
-    btn.classList.add('t-' + tab);
-    document.querySelectorAll('#panel-' + tab + ' .reveal:not(.visible)').forEach((el,i) => {
-      setTimeout(() => el.classList.add('visible'), i * 60);
-    });
+    document.getElementById('panel-'+t).classList.add('active');
+    btn.classList.add('t'+t);
+    document.querySelectorAll('#panel-'+t+' .reveal:not(.visible)').forEach((el,i)=>setTimeout(()=>el.classList.add('visible'),i*60));
   }
-
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 70);
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').style.boxShadow = window.scrollY > 40 ? '0 2px 24px rgba(61,43,31,0.1)' : 'none';
-  });
-
-  function toggleNav() {
-    const links = document.querySelector('.nav-links');
-    const join = document.querySelector('.nav-join');
-    const open = links.style.display === 'flex';
-    if (open) { links.style.display = ''; join.style.display = ''; }
-    else {
-      links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;background:rgba(251,246,238,0.98);padding:1.5rem 2rem;gap:1.5rem;border-bottom:1px solid rgba(200,145,58,0.2);z-index:99;';
-      join.style.cssText = 'display:block;position:fixed;top:calc(60px + 11rem);left:2rem;right:2rem;z-index:99;text-align:center;';
-    }
-  }
+  const obs=new IntersectionObserver((es)=>es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*70);obs.unobserve(e.target);}}),{threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  window.addEventListener('scroll',()=>{document.getElementById('navbar').style.boxShadow=window.scrollY>40?'0 2px 20px rgba(61,43,31,0.09)':'none';});
 </script>
 </body>
 </html>

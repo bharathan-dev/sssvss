@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puttaparthi Yatra — SSSVSS</title>
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<link rel="stylesheet" href="shared.css">
+<nav class="main-nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-om">ॐ</span>
+    <div class="nav-name">SSSVSS<span>Sri Sathya Sai Vedic Society · Singapore</span></div>
+  </a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-back">← Home</a>
+    <span class="nav-sep">·</span>
+    <span class="nav-current">Puttaparthi Yatra</span>
+    <span class="nav-tag">Pilgrimage</span>
+  </div>
+</nav>
+<div class="page-hero" style="background:linear-gradient(135deg,var(--brown) 0%,#3D1F0E 100%);">
+  <div class="page-hero-om">✈️</div>
+  <div class="page-hero-inner">
+    <div class="page-hero-crumb">Yearly Events <span>›</span> Puttaparthi Yatra</div>
+    <h1><em>Puttaparthi</em> Yatra</h1>
+    <p class="page-hero-desc">Annual pilgrimage trips to Prasanthi Nilayam, Puttaparthi — Bhagawan's divine abode. A deeply transformative spiritual journey for SSSVSS devotees.</p>
+    <div class="page-hero-pills">
+      <span class="pill hot">Annual Pilgrimage</span>
+      <span class="pill">Prasanthi Nilayam</span>
+      <span class="pill">Puttaparthi, India</span>
+    </div>
+  </div>
+</div>
+<div class="page">
+  <section class="section" id="about">
+    <div class="section-head reveal">
+      <div class="section-kicker">About the Yatra</div>
+      <h2 class="section-title">Puttaparthi <em>Yatra</em></h2>
+      <div class="section-rule"></div>
+      <p class="section-sub">SSSVSS organises pilgrimage trips to Prasanthi Nilayam — the holy ashram of Bhagawan Sri Sathya Sai Baba in Puttaparthi, Andhra Pradesh, India. The Yatra typically coincides with major events at Prasanthi Nilayam. Trip details, dates, and registration are announced via the WhatsApp group.</p>
+    </div>
+    <div class="contact-bar">
+  <div class="contact-bar-text">
+    <strong>Want to host or need details?</strong>
+    <span>Contact the initiative lead directly or reach our WhatsApp admins.</span>
+  </div>
+  <a href="https://wa.me/6500000000" target="_blank" class="btn-saffron">WhatsApp Admins ↗</a>
+</div>
+  </section>
+  <section class="section" id="photos">
+    <div class="section-head reveal"><h2 class="section-title">Past <em>Yatra Photos</em></h2><div class="section-rule"></div></div>
+    <div class="reveal"><div class="photo-grid">
+  <div class="p-item"><div class="photo-ph"><div class="photo-ph-icon">📸</div><div class="photo-ph-lbl">Puttaparthi Yatra · Recent</div></div></div>
+  <div class="p-item"><div class="photo-ph"><div class="photo-ph-icon">📸</div><div class="photo-ph-lbl">Puttaparthi Yatra</div></div></div>
+  <div class="p-item"><div class="photo-ph"><div class="photo-ph-icon">📸</div><div class="photo-ph-lbl">Puttaparthi Yatra</div></div></div>
+  <div class="p-item"><div class="photo-ph"><div class="photo-ph-icon">📸</div><div class="photo-ph-lbl">Puttaparthi Yatra</div></div></div>
+  <div class="p-item"><div class="photo-ph"><div class="photo-ph-icon">📸</div><div class="photo-ph-lbl">Puttaparthi Yatra</div></div></div>
+</div>
+<div style="margin-top:1rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;">
+  <span style="font-size:12px;color:var(--text-light);font-style:italic;">Replace placeholders with actual photos. Full albums on Google Drive.</span>
+  <a href="https://drive.google.com/drive/folders/FOLDER_ID" target="_blank" class="btn-gold">View All on Drive ↗</a>
+</div></div>
+  </section>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div class="f-brand">Sri Sathya Sai Vedic Society Singapore<span>Sai Ram 🙏 · srisathyasaivedicsocietysingapore.org</span></div>
+    <div class="f-links-row">
+      <a href="index.html">Home</a>
+      <a href="index.html#activities">Activities</a>
+      <a href="gmy-2026.html">GMY 2026</a>
+      <a href="class-schedule.html">Classes</a>
+      <a href="https://srisathyasaivedicsocietysingapore.org/sssvss-registration/">Register</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Sri Sathya Sai Vedic Society Singapore</span><span>Sai Ram 🙏</span></div>
+</footer>
+<script>
+  // Reveal
+  const obs = new IntersectionObserver((es)=>es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*70);obs.unobserve(e.target);}}),{threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  // Sticky nav active
+  const secs=Array.from(document.querySelectorAll('section[id]'));
+  const snavs=document.querySelectorAll('.snav-link');
+  window.addEventListener('scroll',()=>{
+    let cur=secs[0]?.id;
+    secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id;});
+    snavs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+    document.querySelector('nav.main-nav').style.boxShadow=window.scrollY>40?'0 2px 20px rgba(61,43,31,0.09)':'none';
+  });
+  // FAQ
+  function toggleFaq(btn){const a=btn.nextElementSibling,o=btn.classList.contains('open');document.querySelectorAll('.faq-q').forEach(b=>{b.classList.remove('open');b.nextElementSibling.classList.remove('open');});if(!o){btn.classList.add('open');a.classList.add('open');}}
+</script>
+</body>
+</html>

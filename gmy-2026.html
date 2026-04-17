@@ -4,778 +4,436 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sri Gayatri Maha Yagna 2026 — SSSVSS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
 <style>
-  :root {
-    --fire: #C94A0E;
-    --fire-dark: #8C3209;
-    --gold: #C8913A;
-    --gold-light: #E8C06A;
-    --gold-pale: #F5E4C0;
-    --cream: #FBF6EE;
-    --cream-dark: #F2EAD8;
-    --brown: #3D2B1F;
-    --brown-mid: #6B4C35;
-    --brown-light: #9E7B5E;
-    --white: #FFFFFF;
-    --text: #2A1A0E;
-    --text-mid: #5C3D28;
-    --text-light: #9E7B5E;
-    --deep: #1A0E05;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1rem 3rem;
-    background: rgba(251,246,238,0.95); backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(200,145,58,0.18);
-  }
-  .nav-left { display: flex; align-items: center; gap: 1rem; }
-  .nav-back { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
-  .nav-back:hover { color: var(--fire); }
-  .nav-sep { color: var(--gold-light); }
-  .nav-current { font-size: 13px; color: var(--brown); font-family: 'Cormorant Garamond', serif; font-style: italic; }
-  .nav-tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 14px; border: 1px solid rgba(201,74,14,0.3); color: var(--fire); }
-  .btn-fire { display: inline-block; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 24px; background: var(--fire); color: var(--white); text-decoration: none; font-family: 'Jost', sans-serif; border: none; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
-  .btn-fire:hover { background: var(--fire-dark); }
-
-  /* ── HERO ── */
-  .hero {
-    margin-top: 60px; position: relative;
-    background: var(--deep); overflow: hidden;
-    min-height: 480px; display: flex; align-items: flex-end;
-  }
-  .hero-bg {
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse at 15% 60%, rgba(201,74,14,0.35) 0%, transparent 55%),
-      radial-gradient(ellipse at 85% 20%, rgba(200,145,58,0.2) 0%, transparent 45%),
-      radial-gradient(ellipse at 50% 100%, rgba(201,74,14,0.15) 0%, transparent 40%);
-  }
-  /* Flame-like SVG decoration */
-  .hero-flame {
-    position: absolute; right: 5%; top: 0; bottom: 0;
-    display: flex; align-items: center;
-    font-size: 220px; opacity: 0.06;
-    animation: flicker 4s ease-in-out infinite;
-  }
-  @keyframes flicker { 0%,100%{opacity:0.06;transform:scale(1)} 33%{opacity:0.09;transform:scale(1.02)} 66%{opacity:0.05;transform:scale(0.99)} }
-
-  .hero-rings { position: absolute; right: 8%; top: 50%; transform: translateY(-50%); }
-  .hero-ring {
-    position: absolute; border-radius: 50%;
-    border: 1px solid rgba(200,145,58,0.1);
-    transform: translate(-50%,-50%);
-  }
-  .hero-inner { position: relative; z-index: 2; padding: 3.5rem 3rem 3rem; max-width: 780px; }
-  .hero-year-badge {
-    display: inline-block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-    padding: 6px 16px; background: rgba(201,74,14,0.25); color: var(--gold-light);
-    border: 1px solid rgba(201,74,14,0.4); margin-bottom: 1.25rem;
-  }
-  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 5.5vw, 4.2rem); font-weight: 300; color: var(--cream); line-height: 1.08; margin-bottom: 0.5rem; }
-  .hero h1 em { font-style: italic; color: var(--gold-light); }
-  .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 300; font-style: italic; color: rgba(245,228,192,0.6); margin-bottom: 1.25rem; }
-  .hero-desc { font-size: 15px; color: rgba(251,246,238,0.6); line-height: 1.8; max-width: 540px; font-weight: 300; margin-bottom: 2rem; }
-  .hero-pills { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2rem; }
-  .pill { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border: 1px solid rgba(200,145,58,0.3); color: var(--gold-light); }
-  .pill.hot { background: var(--fire); border-color: var(--fire); color: var(--white); }
-  .hero-date-strip {
-    display: flex; gap: 0; border: 1px solid rgba(200,145,58,0.2); overflow: hidden;
-  }
-  .hds-item { padding: 0.75rem 1.25rem; border-right: 1px solid rgba(200,145,58,0.15); }
-  .hds-item:last-child { border-right: none; }
-  .hds-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(200,145,58,0.6); margin-bottom: 3px; }
-  .hds-val { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--cream); }
-
-  /* ── SECTION NAV ── */
-  .section-nav {
-    position: sticky; top: 60px; z-index: 50;
-    background: var(--white); border-bottom: 1px solid rgba(200,145,58,0.15);
-    padding: 0 3rem; display: flex; gap: 0; overflow-x: auto;
-  }
-  .snav-link { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 1rem 1.4rem; color: var(--text-light); text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap; transition: all 0.2s; flex-shrink: 0; }
-  .snav-link:hover { color: var(--fire); }
-  .snav-link.active { color: var(--fire); border-bottom-color: var(--fire); }
-
-  /* ── LAYOUT ── */
-  .page { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-  .section { padding: 4rem 0; border-bottom: 1px solid rgba(200,145,58,0.1); }
-  .section:last-child { border-bottom: none; }
-  .section-head { margin-bottom: 2rem; }
-  .section-kicker { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: var(--brown); line-height: 1.2; }
-  .section-title em { font-style: italic; color: var(--fire); }
-  .section-rule { width: 32px; height: 1px; margin-top: 0.75rem; background: linear-gradient(90deg, var(--gold), transparent); }
-  .section-sub { margin-top: 0.75rem; font-size: 14px; color: var(--text-light); line-height: 1.7; font-weight: 300; }
-
-  /* ── REVEAL ── */
-  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
-  .reveal.visible { opacity: 1; transform: none; }
-
-  /* ── CENTENNIAL BANNER ── */
-  .centennial-banner {
-    background: linear-gradient(135deg, var(--brown) 0%, var(--fire-dark) 100%);
-    padding: 1.5rem 2rem;
-    display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
-    border-left: 4px solid var(--gold);
-    margin-bottom: 3rem;
-  }
-  .cb-icon { font-size: 32px; flex-shrink: 0; }
-  .cb-text { flex: 1; }
-  .cb-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--cream); margin-bottom: 3px; }
-  .cb-desc { font-size: 13px; color: rgba(251,246,238,0.7); line-height: 1.6; font-weight: 300; }
-  .cb-btn { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 22px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-family: 'Jost', sans-serif; transition: all 0.2s; white-space: nowrap; }
-  .cb-btn:hover { background: var(--gold); color: var(--brown); }
-
-  /* ── ABOUT / OVERVIEW ── */
-  .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-  .overview-body { font-size: 15px; line-height: 1.9; color: var(--text-mid); font-weight: 300; }
-  .overview-body p + p { margin-top: 1rem; }
-  .overview-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-style: italic; font-weight: 300; color: var(--brown); line-height: 1.6; border-left: 2px solid var(--gold); padding-left: 1.5rem; margin-bottom: 1.5rem; }
-  .overview-quote cite { display: block; margin-top: 0.75rem; font-size: 12px; font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); }
-
-  .timeline { position: relative; padding-left: 1.5rem; }
-  .timeline::before { content: ''; position: absolute; left: 0; top: 4px; bottom: 4px; width: 1px; background: linear-gradient(to bottom, var(--gold), rgba(200,145,58,0.1)); }
-  .tl-item { position: relative; margin-bottom: 1.5rem; }
-  .tl-item::before { content: ''; position: absolute; left: -1.5rem; top: 6px; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); transform: translateX(-3px); }
-  .tl-day { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fire); margin-bottom: 3px; }
-  .tl-title { font-size: 14px; font-weight: 500; color: var(--brown); margin-bottom: 3px; }
-  .tl-desc { font-size: 13px; color: var(--text-light); line-height: 1.6; }
-
-  /* ── SANKALPA / SADHANA ── */
-  .sadhana-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
-  .sadhana-card { background: var(--white); border: 1px solid rgba(200,145,58,0.2); padding: 1.75rem; }
-  .sadhana-icon { font-size: 28px; margin-bottom: 1rem; }
-  .sadhana-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--brown); margin-bottom: 0.5rem; }
-  .sadhana-desc { font-size: 13px; color: var(--text-light); line-height: 1.7; font-weight: 300; margin-bottom: 1.25rem; }
-  .sadhana-steps { list-style: none; }
-  .sadhana-steps li { font-size: 13px; color: var(--text-mid); padding: 6px 0; border-bottom: 1px solid rgba(200,145,58,0.08); display: flex; gap: 8px; align-items: flex-start; }
-  .sadhana-steps li:last-child { border-bottom: none; }
-  .sadhana-steps li::before { content: '✦'; color: var(--gold); font-size: 9px; margin-top: 4px; flex-shrink: 0; }
-  .sadhana-btn { display: inline-block; margin-top: 1.25rem; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 9px 20px; border: 1px solid rgba(200,145,58,0.35); color: var(--brown-mid); text-decoration: none; font-family: 'Jost', sans-serif; transition: all 0.2s; }
-  .sadhana-btn:hover { border-color: var(--fire); color: var(--fire); }
-
-  /* ── JAPA COUNT ── */
-  .japa-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
-
-  .japa-totals { background: var(--brown); padding: 2rem; }
-  .jt-header { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--gold-light); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.5rem; font-style: normal; font-weight: 400; }
-  .jt-main { text-align: center; padding: 1.5rem 0 1.75rem; border-bottom: 1px solid rgba(200,145,58,0.15); margin-bottom: 1.5rem; }
-  .jt-num { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 500; color: var(--gold-light); line-height: 1; }
-  .jt-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(200,145,58,0.6); margin-top: 6px; }
-  .jt-target { font-size: 12px; color: rgba(200,145,58,0.5); margin-top: 4px; }
-
-  .jt-progress-wrap { margin-bottom: 1.5rem; }
-  .jt-progress-label { display: flex; justify-content: space-between; font-size: 12px; color: rgba(200,145,58,0.7); margin-bottom: 8px; }
-  .jt-bar { height: 6px; background: rgba(200,145,58,0.15); border-radius: 99px; overflow: hidden; }
-  .jt-fill { height: 100%; background: linear-gradient(90deg, var(--fire), var(--gold)); border-radius: 99px; transition: width 1.5s ease; width: 0; }
-
-  .jt-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(200,145,58,0.1); }
-  .jtb-item { background: rgba(255,255,255,0.04); padding: 0.75rem 1rem; }
-  .jtb-val { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--cream); }
-  .jtb-lbl { font-size: 11px; color: rgba(200,145,58,0.5); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
-
-  .jt-updated { font-size: 11px; color: rgba(200,145,58,0.4); margin-top: 1.25rem; font-style: italic; text-align: right; }
-
-  /* Form side */
-  .japa-form-wrap { }
-  .japa-form-intro { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.5rem; font-weight: 300; }
-
-  /* Embedded Google Form placeholder */
-  .form-embed {
-    border: 1px solid rgba(200,145,58,0.2); background: var(--white);
-    min-height: 380px; display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: 2rem; text-align: center; gap: 0.75rem;
-  }
-  .fe-icon { font-size: 40px; opacity: 0.25; }
-  .fe-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--brown); }
-  .fe-desc { font-size: 13px; color: var(--text-light); max-width: 320px; line-height: 1.7; }
-  .fe-code { font-size: 11px; color: var(--gold); font-family: monospace; background: rgba(200,145,58,0.07); padding: 6px 12px; }
-
-  .japa-sheet-note {
-    margin-top: 1.25rem; padding: 1rem 1.25rem;
-    background: var(--cream-dark); border-left: 3px solid var(--gold-light);
-    font-size: 13px; color: var(--text-mid); line-height: 1.7;
-  }
-  .japa-sheet-note strong { color: var(--brown); }
-  .japa-sheet-link { color: var(--fire); text-decoration: none; }
-  .japa-sheet-link:hover { text-decoration: underline; }
-
-  /* ── REGISTRATION ── */
-  .reg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
-  .reg-card { border: 1px solid rgba(200,145,58,0.2); padding: 1.5rem; background: var(--white); }
-  .reg-card.featured { border-color: var(--fire); border-width: 2px; }
-  .reg-badge { display: inline-block; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; background: rgba(201,74,14,0.1); color: var(--fire); margin-bottom: 0.75rem; }
-  .reg-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--brown); margin-bottom: 0.5rem; }
-  .reg-desc { font-size: 13px; color: var(--text-light); line-height: 1.7; margin-bottom: 1.25rem; font-weight: 300; }
-  .reg-details { list-style: none; margin-bottom: 1.25rem; }
-  .reg-details li { font-size: 12px; color: var(--text-mid); padding: 5px 0; border-bottom: 1px solid rgba(200,145,58,0.08); display: flex; gap: 8px; }
-  .reg-details li:last-child { border-bottom: none; }
-  .reg-details li::before { content: '→'; color: var(--text-light); flex-shrink: 0; }
-  .btn-outline-fire { display: inline-block; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 9px 20px; border: 1px solid var(--fire); color: var(--fire); text-decoration: none; font-family: 'Jost', sans-serif; transition: all 0.2s; }
-  .btn-outline-fire:hover { background: var(--fire); color: var(--white); }
-
-  /* ── PHOTOS / ARCHIVE ── */
-  .year-tabs { display: flex; gap: 0; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(200,145,58,0.15); }
-  .ytab { font-size: 13px; padding: 0.75rem 1.5rem; background: none; border: none; cursor: pointer; color: var(--text-light); font-family: 'Jost', sans-serif; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.2s; letter-spacing: 0.04em; }
-  .ytab:hover { color: var(--fire); }
-  .ytab.active { color: var(--fire); border-bottom-color: var(--fire); font-weight: 500; }
-
-  .archive-panel { display: none; }
-  .archive-panel.active { display: block; }
-
-  .archive-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 170px 120px; gap: 3px; }
-  .archive-item { overflow: hidden; position: relative; background: var(--cream-dark); cursor: pointer; }
-  .archive-item:first-child { grid-column: span 2; grid-row: span 2; }
-  .archive-item:nth-child(2) { grid-column: span 2; }
-  .archive-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; background: linear-gradient(135deg, var(--cream-dark), rgba(200,145,58,0.1)); transition: background 0.2s; }
-  .archive-item:hover .archive-placeholder { background: linear-gradient(135deg, rgba(200,145,58,0.12), rgba(201,74,14,0.07)); }
-  .archive-placeholder-icon { font-size: 22px; opacity: 0.3; }
-  .archive-placeholder-label { font-size: 11px; color: var(--text-light); opacity: 0.7; text-align: center; }
-  .archive-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 0.75rem; background: linear-gradient(transparent, rgba(26,14,5,0.7)); font-size: 11px; color: rgba(251,246,238,0.9); opacity: 0; transition: opacity 0.2s; }
-  .archive-item:hover .archive-overlay { opacity: 1; }
-
-  .archive-meta { margin-top: 1.25rem; display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
-  .archive-stat { text-align: center; }
-  .archive-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--fire); }
-  .archive-stat-lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); }
-  .archive-drive-btn { margin-left: auto; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 20px; border: 1px solid rgba(200,145,58,0.3); color: var(--brown-light); text-decoration: none; font-family: 'Jost', sans-serif; transition: all 0.2s; }
-  .archive-drive-btn:hover { border-color: var(--fire); color: var(--fire); }
-
-  /* ── FAQ ── */
-  .faq-item { border-bottom: 1px solid rgba(200,145,58,0.12); }
-  .faq-item:first-child { border-top: 1px solid rgba(200,145,58,0.12); }
-  .faq-q { width: 100%; text-align: left; background: none; border: none; padding: 1.25rem 0; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; color: var(--brown); line-height: 1.4; transition: color 0.2s; }
-  .faq-q:hover, .faq-q.open { color: var(--fire); }
-  .faq-icon { flex-shrink: 0; width: 22px; height: 22px; border: 1px solid rgba(200,145,58,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--gold); transition: transform 0.3s, background 0.2s; margin-top: 2px; }
-  .faq-q.open .faq-icon { transform: rotate(45deg); background: rgba(201,74,14,0.08); }
-  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.2s; font-size: 14px; color: var(--text-mid); line-height: 1.85; font-weight: 300; }
-  .faq-a.open { max-height: 500px; padding-bottom: 1.25rem; }
-  .faq-a p + p { margin-top: 0.75rem; }
-  .faq-a ul { padding-left: 1.25rem; margin-top: 0.5rem; }
-  .faq-a ul li { margin-bottom: 0.4rem; }
-
-  /* ── FOOTER ── */
-  .page-footer { background: var(--brown); color: var(--cream-dark); padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-  .pf-left { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--cream); }
-  .pf-left span { display: block; font-size: 11px; font-family: 'Jost', sans-serif; color: var(--brown-light); margin-top: 2px; letter-spacing: 0.08em; text-transform: uppercase; }
-  .pf-links { display: flex; gap: 1.5rem; }
-  .pf-links a { font-size: 12px; color: var(--brown-light); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
-  .pf-links a:hover { color: var(--cream); }
-
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .hero-inner { padding: 2.5rem 1.5rem 2rem; }
-    .section-nav { padding: 0 1.5rem; }
-    .page { padding: 0 1.5rem; }
-    .overview-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .sadhana-grid { grid-template-columns: 1fr; }
-    .japa-layout { grid-template-columns: 1fr; }
-    .reg-grid { grid-template-columns: 1fr; }
-    .archive-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-    .archive-item:first-child { grid-column: span 2; height: 200px; }
-    .archive-item:nth-child(2) { grid-column: span 1; }
-    .archive-item { height: 140px; }
-    .hero-date-strip { flex-wrap: wrap; }
-  }
+  .hero{margin-top:60px;background:var(--brown);overflow:hidden;min-height:460px;display:flex;align-items:flex-end;position:relative;}
+  .hbg{position:absolute;inset:0;background:radial-gradient(ellipse at 15% 60%,rgba(201,74,14,0.35) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(200,145,58,0.18) 0%,transparent 45%),radial-gradient(ellipse at 50% 100%,rgba(201,74,14,0.12) 0%,transparent 40%);}
+  .hfl{position:absolute;right:6%;top:50%;transform:translateY(-50%);font-size:200px;opacity:0.06;animation:flk 4s ease-in-out infinite;}
+  @keyframes flk{0%,100%{opacity:0.06}50%{opacity:0.1}}
+  .hr1,.hr2,.hr3{position:absolute;border-radius:50%;border:1px solid rgba(200,145,58,0.08);transform:translate(-50%,-50%);top:50%;right:-5%;}
+  .hr1{width:420px;height:420px;}
+  .hr2{width:270px;height:270px;border-color:rgba(200,145,58,0.06);}
+  .hr3{width:130px;height:130px;border-color:rgba(201,74,14,0.1);}
+  .hi{position:relative;z-index:2;padding:3.5rem 3rem 3rem;max-width:800px;}
+  .hb{display:inline-block;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 14px;background:rgba(201,74,14,0.25);color:var(--gold-light);border:1px solid rgba(201,74,14,0.4);margin-bottom:1.1rem;}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5.5vw,4rem);font-weight:300;color:var(--cream);line-height:1.08;margin-bottom:0.5rem;}
+  h1 em{font-style:italic;color:var(--gold-light);}
+  .hsub{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;font-style:italic;color:rgba(245,228,192,0.55);margin-bottom:1.2rem;}
+  .hd{font-size:14px;color:rgba(251,246,238,0.58);line-height:1.8;max-width:540px;font-weight:300;margin-bottom:1.75rem;}
+  .hds{display:flex;gap:0;border:1px solid rgba(200,145,58,0.2);overflow:hidden;flex-wrap:wrap;}
+  .hdi{padding:0.65rem 1.1rem;border-right:1px solid rgba(200,145,58,0.15);}
+  .hdi:last-child{border-right:none;}
+  .hdil{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(200,145,58,0.55);margin-bottom:2px;}
+  .hdiv{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--cream);}
+  /* centennial */
+  .cbanner{background:linear-gradient(135deg,#6B2D0E 0%,#3D2B1F 100%);padding:1.25rem 2rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;border-left:4px solid var(--gold);}
+  .cbt{flex:1;}
+  .cbtt{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--cream);margin-bottom:3px;}
+  .cbd{font-size:12px;color:rgba(251,246,238,0.65);line-height:1.6;font-weight:300;}
+  /* programme */
+  .day-block{margin-bottom:1.5rem;}
+  .day-hdr{display:flex;align-items:center;gap:1rem;padding:0.85rem 1.25rem;background:var(--brown);margin-bottom:2px;}
+  .day-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:500;color:var(--gold-light);line-height:1;}
+  .day-date{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--cream);}
+  .day-dow{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-top:2px;}
+  .special-badge{margin-left:auto;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 12px;background:rgba(239,68,68,0.2);color:#FCA5A5;border:1px solid rgba(239,68,68,0.3);}
+  .prog-period{padding:0.5rem 1.25rem 0;background:var(--cream-dark);}
+  .pp-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);padding:0.5rem 0 0.3rem;}
+  .prog-row{display:grid;grid-template-columns:80px 1fr;gap:0.9rem;padding:0.6rem 1.25rem;background:var(--white);border-bottom:1px solid rgba(200,145,58,0.07);align-items:center;}
+  .prog-row:last-child{border-bottom:none;}
+  .prog-time{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--saffron);line-height:1;}
+  .prog-item{font-size:13px;color:var(--text-mid);}
+  .prog-item strong{color:var(--brown);}
+  /* japa */
+  .japa-lay{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
+  .jtcard{background:var(--brown);padding:1.75rem;}
+  .jthead{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;}
+  .jtnum{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:500;color:var(--gold-light);line-height:1;text-align:center;padding:1rem 0;}
+  .jtlbl{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(200,145,58,0.5);margin-top:4px;text-align:center;}
+  .jttar{font-size:11px;color:rgba(200,145,58,0.4);text-align:center;margin-top:3px;}
+  .jtbar-wrap{margin:1rem 0;}
+  .jtbar-lbl{display:flex;justify-content:space-between;font-size:11px;color:rgba(200,145,58,0.6);margin-bottom:6px;}
+  .jtbar{height:5px;background:rgba(200,145,58,0.15);border-radius:99px;overflow:hidden;}
+  .jtfill{height:100%;background:linear-gradient(90deg,#C94A0E,var(--gold));border-radius:99px;transition:width 1.5s ease;width:0;}
+  .jtgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(200,145,58,0.1);margin-top:1rem;}
+  .jtg{background:rgba(255,255,255,0.04);padding:0.7rem 1rem;}
+  .jtgv{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--cream);}
+  .jtgl{font-size:10px;color:rgba(200,145,58,0.45);text-transform:uppercase;letter-spacing:0.07em;margin-top:1px;}
+  /* sankalpa */
+  .sk-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .sk-card{background:var(--white);border:1px solid rgba(200,145,58,0.18);padding:1.5rem;}
+  .sk-icon{font-size:26px;margin-bottom:0.75rem;}
+  .sk-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--brown);margin-bottom:0.4rem;}
+  .sk-desc{font-size:13px;color:var(--text-light);line-height:1.7;font-weight:300;margin-bottom:1rem;}
+  .sk-dates{border-top:1px solid rgba(200,145,58,0.12);padding-top:0.75rem;}
+  .sk-date{display:flex;gap:8px;font-size:12px;color:var(--text-mid);padding:4px 0;}
+  .sk-date::before{content:'→';color:var(--text-light);}
+  /* reg */
+  .reg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+  .reg-card{border:1px solid rgba(200,145,58,0.2);padding:1.5rem;background:var(--white);}
+  .reg-card.feat{border-color:var(--saffron);border-width:2px;}
+  .reg-badge{display:inline-block;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:3px 10px;background:rgba(212,82,26,0.08);color:var(--saffron);margin-bottom:0.7rem;}
+  .reg-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--brown);margin-bottom:0.4rem;}
+  .reg-desc{font-size:12px;color:var(--text-light);line-height:1.7;margin-bottom:1rem;font-weight:300;}
+  .reg-list{list-style:none;margin-bottom:1rem;}
+  .reg-list li{font-size:12px;color:var(--text-mid);padding:4px 0;border-bottom:1px solid rgba(200,145,58,0.07);display:flex;gap:6px;}
+  .reg-list li::before{content:'→';color:var(--text-light);flex-shrink:0;}
+  .reg-list li:last-child{border-bottom:none;}
+  /* archive tabs */
+  .ytabs{display:flex;gap:0;border-bottom:1px solid rgba(200,145,58,0.15);}
+  .ytab{font-size:12px;padding:0.7rem 1.3rem;background:none;border:none;cursor:pointer;color:var(--text-light);font-family:'Jost',sans-serif;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.2s;}
+  .ytab:hover{color:var(--saffron);}
+  .ytab.active{color:var(--saffron);border-bottom-color:var(--saffron);}
+  .ypanel{display:none;}
+  .ypanel.active{display:block;}
+  .ph-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:160px 120px;gap:3px;margin-top:1.25rem;}
+  .ph-item{overflow:hidden;background:var(--cream-dark);position:relative;}
+  .ph-item:first-child{grid-column:span 2;grid-row:span 2;}
+  .ph-item:nth-child(2){grid-column:span 2;}
+  .ph-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:linear-gradient(135deg,var(--cream-dark),rgba(200,145,58,0.1));}
+  .ph-ic{font-size:20px;opacity:0.3;}
+  .ph-lb{font-size:10px;color:var(--text-light);opacity:0.7;text-align:center;}
+  @media(max-width:860px){.japa-lay{grid-template-columns:1fr;}.sk-grid{grid-template-columns:1fr;}.reg-grid{grid-template-columns:1fr;}.ph-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}.ph-item{height:140px;}.ph-item:first-child{grid-column:span 2;height:190px;}.ph-item:nth-child(2){grid-column:span 1;}}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-left">
-    <a href="index.html" class="nav-back">← SSSVSS</a>
+<nav class="main-nav">
+  <a href="index.html" class="nav-logo"><span class="nav-om">ॐ</span><div class="nav-name">SSSVSS<span>Sri Sathya Sai Vedic Society · Singapore</span></div></a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-back">← Home</a>
     <span class="nav-sep">·</span>
     <span class="nav-current">Sri Gayatri Maha Yagna</span>
-  </div>
-  <div style="display:flex;gap:1rem;align-items:center;">
     <span class="nav-tag">Yearly Event</span>
-    <a href="#registration" class="btn-fire">Register Now</a>
+    <a href="https://tinyurl.com/SGMY-SG2026" target="_blank" class="btn-saffron">Register Now</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-flame">🔥</div>
-  <div class="hero-rings">
-    <div class="hero-ring" style="width:400px;height:400px;"></div>
-    <div class="hero-ring" style="width:260px;height:260px;border-color:rgba(200,145,58,0.07);"></div>
-    <div class="hero-ring" style="width:130px;height:130px;border-color:rgba(201,74,14,0.1);"></div>
-  </div>
-  <div class="hero-inner">
-    <div class="hero-year-badge">GMY 2026 · Centennial Edition</div>
-    <h1>Sri <em>Gayatri</em><br>Maha Yagna</h1>
-    <div class="hero-subtitle">ॐ भूर्भुवः स्वः — The Great Fire Sacrifice of Gayatri</div>
-    <p class="hero-desc">A sacred three-day yajna of Gayatri Homa and collective Japa — offered as part of Bhagawan Sri Sathya Sai Baba's Centennial Celebration. Together, we ignite the flame of devotion across Singapore.</p>
-    <div class="hero-pills">
-      <span class="pill hot">8–10 May 2026</span>
-      <span class="pill">Holy Tree Sri Subramaniar Temple</span>
-      <span class="pill">Sengkang, Singapore</span>
-    </div>
-    <div class="hero-date-strip">
-      <div class="hds-item"><div class="hds-label">Opens</div><div class="hds-val">8 May 2026 · 8:00 AM</div></div>
-      <div class="hds-item"><div class="hds-label">Duration</div><div class="hds-val">3 Days</div></div>
-      <div class="hds-item"><div class="hds-label">Venue</div><div class="hds-val">Sengkang, Singapore</div></div>
-      <div class="hds-item"><div class="hds-label">Days left</div><div class="hds-val" id="countdown-val">—</div></div>
+  <div class="hbg"></div>
+  <div class="hfl">🔥</div>
+  <div class="hr1"></div><div class="hr2"></div><div class="hr3"></div>
+  <div class="hi">
+    <span class="hb">GMY 2026 · Centennial Edition · H.H. Bhagawan Sri Sathya Sai Baba's Araadhana Mahotsavam</span>
+    <h1>Sri <em>Gayatri</em><br>Maha Yagna 2026</h1>
+    <div class="hsub">Samastha Lokha Sukhino Bhavanthu</div>
+    <p class="hd">A sacred three-day yajna for Global Peace and Harmony — in conjunction with H.H. Bhagawan Sri Sathya Sai Baba's Araadhana Mahotsavam. Conducted by Sri Sathya Sai Vedic Society, Singapore.</p>
+    <div class="hds">
+      <div class="hdi"><div class="hdil">Dates</div><div class="hdiv">8–10 May 2026</div></div>
+      <div class="hdi"><div class="hdil">Venue</div><div class="hdiv">Field 2, 24 Geylang East Ave 2</div></div>
+      <div class="hdi"><div class="hdil">Landmark</div><div class="hdiv">Opposite Sri Sivan Temple</div></div>
+      <div class="hdi"><div class="hdil">Countdown</div><div class="hdiv" id="cdown">—</div></div>
     </div>
   </div>
 </div>
 
-<!-- SECTION NAV -->
-<nav class="section-nav" id="section-nav">
-  <a href="#about"      class="snav-link active">About</a>
-  <a href="#sankalpa"   class="snav-link">Sankalpa & Sadhana</a>
-  <a href="#japa"       class="snav-link">Japa Count</a>
+<div class="cbanner">
+  <div style="font-size:28px;flex-shrink:0;">🪔</div>
+  <div class="cbt">
+    <div class="cbtt">Part of Bhagawan Sri Sathya Sai Baba's Centennial Celebration</div>
+    <div class="cbd">GMY 2026 is offered as a special centennial tribute during the 100th year of Bhagawan's birth. Ritwiks, Chanters, and Volunteers are invited to participate in this once-in-a-century yajna.</div>
+  </div>
+  <a href="https://tinyurl.com/SGMY-SG2026" target="_blank" class="btn-saffron">Register as Ritwik / Volunteer ↗</a>
+</div>
+
+<nav class="section-nav">
+  <a href="#programme" class="snav-link active">Programme</a>
+  <a href="#venue" class="snav-link">Venue</a>
+  <a href="#sankalpa" class="snav-link">Sankalpa</a>
+  <a href="#japa" class="snav-link">Japa Count</a>
   <a href="#registration" class="snav-link">Registration</a>
-  <a href="#gallery"    class="snav-link">Gallery</a>
-  <a href="#faq"        class="snav-link">FAQ</a>
+  <a href="#gallery" class="snav-link">Gallery</a>
+  <a href="#faq" class="snav-link">FAQ</a>
 </nav>
 
 <div class="page">
 
-  <!-- ABOUT -->
-  <div class="section" id="about">
-
-    <div class="centennial-banner reveal">
-      <div class="cb-icon">🪔</div>
-      <div class="cb-text">
-        <div class="cb-title">Part of Bhagawan Sri Sathya Sai Baba's Centennial Celebration</div>
-        <div class="cb-desc">GMY 2026 is being held as a special offering during the centenary year of Bhagawan's birth. Ritwiks, Chanters, and Volunteers are invited to participate in this once-in-a-lifetime yajna.</div>
-      </div>
-      <a href="https://tinyurl.com/SGMY-SG2026" target="_blank" class="cb-btn">Register as Ritwik / Volunteer ↗</a>
-    </div>
-
+  <!-- PROGRAMME -->
+  <section class="section" id="programme">
     <div class="section-head reveal">
-      <div class="section-kicker">What is it</div>
-      <h2 class="section-title">About <em>Gayatri Maha Yagna</em></h2>
+      <div class="section-kicker">3-Day Schedule</div>
+      <h2 class="section-title">Full <em>Programme</em></h2>
       <div class="section-rule"></div>
     </div>
 
-    <div class="overview-grid">
-      <div class="reveal">
-        <blockquote class="overview-quote">
-          "The Gayatri Mantra is the embodiment of all the Vedas. Whoever meditates on it and repeats it will be protected by the Gayatri."
-          <cite>— Bhagawan Sri Sathya Sai Baba</cite>
-        </blockquote>
-        <div class="overview-body">
-          <p>The Gayatri Maha Yagna is an annual large-scale fire sacrifice (Homa) and collective chanting of the Gayatri Mantra, drawing devotees from across Singapore and beyond. It is one of the most auspicious events in the SSSVSS calendar.</p>
-          <p>The three-day event includes Sankalpa, Homa, Purnahuti, and concludes with Mangala Arati and Annadanam for all participants. Ritwiks perform the sacred fire ritual while devotees participate through Japa, prayers, and service.</p>
-        </div>
+    <!-- Day 1 -->
+    <div class="day-block reveal">
+      <div class="day-hdr">
+        <div><div class="day-num">1</div></div>
+        <div><div class="day-date">Friday, 8th May 2026</div><div class="day-dow">Day One</div></div>
       </div>
-      <div class="reveal">
-        <div class="timeline">
-          <div class="tl-item">
-            <div class="tl-day">Day 1 · 8 May</div>
-            <div class="tl-title">Sankalpa & Commencement</div>
-            <div class="tl-desc">Opening prayers, Sankalpa, and commencement of Gayatri Homa. Morning session begins 8:00 AM.</div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-day">Day 2 · 9 May</div>
-            <div class="tl-title">Maha Homa</div>
-            <div class="tl-desc">Full-day Homa with continuous Gayatri Japa. Ritwiks and chanters in rotation. Open to all devotees.</div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-day">Day 3 · 10 May</div>
-            <div class="tl-title">Purnahuti & Mangala Arati</div>
-            <div class="tl-desc">Concluding Homa, Purnahuti, Mangala Arati, and Annadanam (blessed meal) for all present.</div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-day">Throughout</div>
-            <div class="tl-title">Japa & Prayers</div>
-            <div class="tl-desc">Devotees contribute through individual and collective Gayatri Japa — counts submitted online and tallied in real time.</div>
-          </div>
+      <div class="prog-period">
+        <div class="pp-label">Morning</div>
+        <div class="prog-row"><div class="prog-time">8.30 am</div><div class="prog-item"><strong>Chandi Homam</strong></div></div>
+        <div class="prog-row"><div class="prog-time">9.30 am</div><div class="prog-item"><strong>Devi Mahatmyam Parayanam</strong></div></div>
+        <div class="prog-row"><div class="prog-time">12.30 pm</div><div class="prog-item"><strong>Mangala Arathi &amp; Prasadam / Lunch</strong></div></div>
+        <div class="pp-label">Evening</div>
+        <div class="prog-row"><div class="prog-time">6.30 pm</div><div class="prog-item"><strong>Sri Lalitha Sahasranamam &amp; Trishati</strong></div></div>
+        <div class="prog-row"><div class="prog-time">7.30 pm</div><div class="prog-item"><strong>SSE Bhajans</strong></div></div>
+        <div class="prog-row" style="border-bottom:none;"><div class="prog-time">8.30 pm</div><div class="prog-item"><strong>Mangala Arathi &amp; Prasadam / Dinner</strong></div></div>
+      </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="day-block reveal">
+      <div class="day-hdr">
+        <div><div class="day-num">2</div></div>
+        <div><div class="day-date">Saturday, 9th May 2026</div><div class="day-dow">Day Two</div></div>
+        <span class="special-badge">🩸 Blood Donation Drive 9AM–3PM</span>
+      </div>
+      <div class="prog-period">
+        <div class="pp-label">Morning</div>
+        <div class="prog-row"><div class="prog-time">6.30 am</div><div class="prog-item"><strong>Ganapathi Pooja &amp; Mahanyasam</strong></div></div>
+        <div class="prog-row"><div class="prog-time">8.00 am</div><div class="prog-item"><strong>Ekadasha Rudram and Abhishekam</strong></div></div>
+        <div class="prog-row"><div class="prog-time">10.30 am</div><div class="prog-item"><strong>Rudra-Chandi Homam</strong></div></div>
+        <div class="prog-row"><div class="prog-time">12.30 pm</div><div class="prog-item"><strong>Mangala Arathi &amp; Prasadam / Lunch</strong></div></div>
+        <div class="pp-label">Evening</div>
+        <div class="prog-row"><div class="prog-time">6.30 pm</div><div class="prog-item"><strong>Sri Sathya Sai Ashtottara Shatanamavali</strong></div></div>
+        <div class="prog-row"><div class="prog-time">6.45 pm</div><div class="prog-item"><strong>Divine Reflections</strong> (Talk)</div></div>
+        <div class="prog-row"><div class="prog-time">7.00 pm</div><div class="prog-item"><strong>Bhajans</strong></div></div>
+        <div class="prog-row" style="border-bottom:none;"><div class="prog-time">8.30 pm</div><div class="prog-item"><strong>Mangala Arathi &amp; Prasadam / Dinner</strong></div></div>
+      </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="day-block reveal">
+      <div class="day-hdr">
+        <div><div class="day-num">3</div></div>
+        <div><div class="day-date">Sunday, 10th May 2026</div><div class="day-dow">Day Three — Main Yagna</div></div>
+      </div>
+      <div class="prog-period">
+        <div class="pp-label">Morning</div>
+        <div class="prog-row"><div class="prog-time">6.00 am</div><div class="prog-item"><strong>Opening Prayers &amp; Veda Parayanam</strong></div></div>
+        <div class="prog-row"><div class="prog-time">6.45 am</div><div class="prog-item"><strong>Sri Gayathri Maha Yagna</strong> — Homam &amp; Tharpanam</div></div>
+        <div class="prog-row"><div class="prog-time">11.00 am</div><div class="prog-item"><strong>Poorna Aahuthi &amp; Abhishekam</strong></div></div>
+        <div class="prog-row" style="border-bottom:none;"><div class="prog-time">12.30 pm</div><div class="prog-item"><strong>Mangala Arathi &amp; Prasadam / Lunch</strong></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENUE -->
+  <section class="section" id="venue">
+    <div class="section-head reveal">
+      <div class="section-kicker">Location</div>
+      <h2 class="section-title">Venue & <em>Directions</em></h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="reveal">
+      <div class="venue-card">
+        <div class="venue-icon">📍</div>
+        <div>
+          <div class="venue-name">Field 2 — 24 Geylang East Avenue 2, Singapore 389752</div>
+          <div class="venue-addr">Opposite Sri Sivan Temple, Geylang East, Singapore 389752</div>
+          <a href="https://www.google.com/maps/search/24+Geylang+East+Avenue+2+Singapore+389752" target="_blank" class="venue-map">Get Directions on Google Maps ↗</a>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- SANKALPA & SADHANA -->
-  <div class="section" id="sankalpa">
+  <!-- SANKALPA -->
+  <section class="section" id="sankalpa">
     <div class="section-head reveal">
       <div class="section-kicker">Prepare Yourself</div>
       <h2 class="section-title">Japa <em>Sankalpa</em> & Daily Sadhana</h2>
       <div class="section-rule"></div>
-      <p class="section-sub">In the weeks leading up to GMY, devotees are invited to take a Sankalpa — a sacred resolve — to chant the Gayatri Mantra daily and contribute their count to the collective Japa offering.</p>
+      <p class="section-sub">In the days preceding SGMY, devotees take a Sankalpa — a sacred resolve — to chant the Gayatri Mantra daily and contribute to the collective Japa offering at Purnahuti. There are three Sankalpa opportunities.</p>
     </div>
-
-    <div class="sadhana-grid">
-      <div class="sadhana-card reveal">
-        <div class="sadhana-icon">🙏</div>
-        <div class="sadhana-title">Take the Japa Sankalpa</div>
-        <div class="sadhana-desc">Commit to a daily count of Gayatri Mantra repetitions from now until the Yagna. Your sankalpa becomes part of the collective offering to Bhagawan.</div>
-        <ul class="sadhana-steps">
-          <li>Choose your daily Japa count — 108, 216, or 1008</li>
-          <li>Chant at a fixed time each day, preferably at dawn</li>
-          <li>Submit your count weekly using the Japa form below</li>
-          <li>All counts are tallied and offered at Purnahuti</li>
-        </ul>
-        <a href="#japa" class="sadhana-btn">Submit Your Count ↗</a>
+    <div class="sk-grid">
+      <div class="sk-card reveal">
+        <div class="sk-icon">🙏</div>
+        <div class="sk-title">Physical Sankalpa</div>
+        <div class="sk-desc">An in-person Sankalpa gathering where devotees make their resolve together — the most powerful form of collective intention.</div>
+        <div class="sk-dates">
+          <div class="sk-date">Around Chinese New Year period (date announced via WhatsApp)</div>
+        </div>
       </div>
-
-      <div class="sadhana-card reveal">
-        <div class="sadhana-icon">🌅</div>
-        <div class="sadhana-title">Daily Prayers Sadhana Guide</div>
-        <div class="sadhana-desc">A structured daily sadhana guide to prepare your mind, body, and spirit for the Yagna. Includes prayers, meditation, and Gayatri chanting practice.</div>
-        <ul class="sadhana-steps">
-          <li>Morning Surya Namaskar with Gayatri chanting</li>
-          <li>Recitation of Gayatri Mantra — minimum 108 times</li>
-          <li>Evening prayer and reflection</li>
-          <li>Sattvic diet and positive thinking throughout</li>
-        </ul>
-        <a href="https://drive.google.com/file/d/SADHANA_GUIDE_ID/view" target="_blank" class="sadhana-btn">Download Sadhana Guide ↗</a>
+      <div class="sk-card reveal">
+        <div class="sk-icon">💻</div>
+        <div class="sk-title">Digital Sankalpas (×2)</div>
+        <div class="sk-desc">Two online Sankalpa sessions within 45 days of SGMY, open to all devotees regardless of location.</div>
+        <div class="sk-dates">
+          <div class="sk-date">Digital Sankalpa 1 — within 45 days of 8 May 2026</div>
+          <div class="sk-date">Digital Sankalpa 2 — within 45 days of 8 May 2026</div>
+        </div>
       </div>
     </div>
-  </div>
+    <div style="margin-top:1.25rem;background:var(--cream-dark);border-left:3px solid var(--gold-light);padding:1.1rem 1.5rem;" class="reveal">
+      <strong style="display:block;font-size:14px;color:var(--brown);margin-bottom:4px;">90-Day Daily Prayers Sadhana</strong>
+      <span style="font-size:13px;color:var(--text-mid);">Alongside Japa Sankalpa, devotees join the daily 6:30–7:00 AM digital morning prayers for 90 days prior to SGMY. See the <a href="90-day-prayers.html" style="color:var(--saffron);">90-Day Prayers page</a> for the full programme and how to join.</span>
+    </div>
+  </section>
 
   <!-- JAPA COUNT -->
-  <div class="section" id="japa">
+  <section class="section" id="japa">
     <div class="section-head reveal">
       <div class="section-kicker">Collective Offering</div>
-      <h2 class="section-title">Japa Count <em>& Running Totals</em></h2>
+      <h2 class="section-title">Japa Count & <em>Running Totals</em></h2>
       <div class="section-rule"></div>
-      <p class="section-sub">Submit your Gayatri Japa count below. Every submission feeds into the live tally — our collective offering to Bhagawan at Purnahuti.</p>
+      <p class="section-sub">Submit your Gayatri Japa count below. Every submission feeds into the collective tally — offered to Bhagawan at Purnahuti. <strong style="color:var(--brown);">Note:</strong> The full database (with user-level tracking, duplicate validation, and admin reporting) is maintained separately — <a href="https://srisathyasaivedicsocietysingapore.org/gmy2026/" target="_blank" style="color:var(--saffron);">access it here</a>. Only registered users (added by admin) can submit counts to the database. The totals below reflect the public cumulative view.</p>
     </div>
-
-    <div class="japa-layout">
-
-      <!-- Running totals (powered by Google Sheets) -->
+    <div class="japa-lay">
       <div class="reveal">
-        <div class="japa-totals">
-          <div class="jt-header">Live Japa Tally — GMY 2026</div>
-
-          <div class="jt-main">
-            <div class="jt-num" id="japa-total">1,24,308</div>
-            <div class="jt-label">Total Gayatri Japa Chants</div>
-            <div class="jt-target">Target: 10,00,000 (10 Lakh)</div>
+        <div class="jtcard">
+          <div class="jthead">Live Japa Tally — GMY 2026</div>
+          <div class="jtnum" id="japa-total">1,24,308</div>
+          <div class="jtlbl">Total Gayatri Japa Chants</div>
+          <div class="jttar">Target: 10,00,000 (10 Lakh)</div>
+          <div class="jtbar-wrap">
+            <div class="jtbar-lbl"><span>Progress</span><span id="jpct">12.4%</span></div>
+            <div class="jtbar"><div class="jtfill" id="jbar" style="width:12.4%"></div></div>
           </div>
-
-          <div class="jt-progress-wrap">
-            <div class="jt-progress-label">
-              <span>Progress</span>
-              <span id="japa-pct">12.4%</span>
-            </div>
-            <div class="jt-bar"><div class="jt-fill" id="japa-bar" style="width:12.4%"></div></div>
+          <div class="jtgrid">
+            <div class="jtg"><div class="jtgv">247</div><div class="jtgl">Participants</div></div>
+            <div class="jtg"><div class="jtgv">503</div><div class="jtgl">Avg / person</div></div>
+            <div class="jtg"><div class="jtgv" id="days-left">—</div><div class="jtgl">Days to go</div></div>
+            <div class="jtg"><div class="jtgv">8,75,692</div><div class="jtgl">Remaining</div></div>
           </div>
-
-          <div class="jt-breakdown">
-            <div class="jtb-item">
-              <div class="jtb-val">247</div>
-              <div class="jtb-lbl">Participants</div>
-            </div>
-            <div class="jtb-item">
-              <div class="jtb-val">503</div>
-              <div class="jtb-lbl">Avg / person</div>
-            </div>
-            <div class="jtb-item">
-              <div class="jtb-val">38</div>
-              <div class="jtb-lbl">Days to go</div>
-            </div>
-            <div class="jtb-item">
-              <div class="jtb-val">8,75,692</div>
-              <div class="jtb-lbl">Remaining</div>
-            </div>
-          </div>
-
-          <div class="jt-updated">Last updated: 13 Apr 2026 · 9:00 AM</div>
+          <div style="font-size:10px;color:rgba(200,145,58,0.35);margin-top:1rem;text-align:right;font-style:italic;">Live data from Google Sheets · Updated daily</div>
         </div>
-
-        <div class="japa-sheet-note">
-          <strong>Live Google Sheets embed:</strong> Replace the tally card above with an embedded Google Sheet for real-time updates — no manual changes needed. <a href="https://docs.google.com/spreadsheets/d/JAPA_SHEET_ID" class="japa-sheet-link" target="_blank">Open in Google Sheets ↗</a>
+        <div style="margin-top:1rem;padding:0.9rem 1.1rem;background:var(--cream-dark);border-left:3px solid var(--gold-light);font-size:12px;color:var(--text-mid);">
+          <strong style="color:var(--brown);">Admin database:</strong> For registered-user Japa entry, duplicate validation, and per-user / block-level reports — <a href="https://srisathyasaivedicsocietysingapore.org/gmy2026/" target="_blank" style="color:var(--saffron);">use the GMY2026 database ↗</a>. Contact admin to be registered.
         </div>
       </div>
-
-      <!-- Japa submission form -->
       <div class="reveal">
-        <div style="margin-bottom:1rem;">
-          <div class="section-kicker">Submit Your Count</div>
-          <p class="japa-form-intro">Fill in the form below with your name and Japa count for the week. Submissions are collected in Google Sheets and reflected in the tally above within 24 hours.</p>
+        <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:1.25rem;font-weight:300;">Submit your Gayatri Japa count here. Submissions are reviewed and added to the tally. Registered database users submit via the GMY2026 database link above.</p>
+        <!-- Replace with Google Form embed -->
+        <div class="sheet-placeholder">
+          <div class="sheet-ph-icon">📋</div>
+          <div class="sheet-ph-title">Japa Count Submission Form</div>
+          <div class="sheet-ph-desc">Embed your Google Form here for Japa count submissions.</div>
+          <div class="sheet-ph-code">&lt;iframe src="docs.google.com/forms/FORM_ID/viewform?embedded=true" /&gt;</div>
         </div>
-
-        <!--═══════════════════════════════════════════════════
-            REPLACE with Google Form embed:
-            <iframe
-              src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true"
-              width="100%" height="520" frameborder="0"
-              marginheight="0" marginwidth="0">Loading…</iframe>
-            ═══════════════════════════════════════════════════ -->
-        <div class="form-embed">
-          <div class="fe-icon">📋</div>
-          <div class="fe-title">Japa Submission Form</div>
-          <div class="fe-desc">Embed your Google Form here. Participants fill it in directly on this page — no redirect needed.</div>
-          <div class="fe-code">&lt;iframe src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true" .../&gt;</div>
-        </div>
-
-        <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
-          <a href="https://forms.google.com/JAPA_FORM_ID" target="_blank" class="btn-fire">Open Form in New Tab ↗</a>
-          <a href="https://docs.google.com/spreadsheets/d/JAPA_SHEET_ID" target="_blank" class="btn-outline-fire">View All Submissions ↗</a>
+        <div style="margin-top:1rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a href="https://forms.google.com/JAPA_FORM_ID" target="_blank" class="btn-saffron">Open Form ↗</a>
+          <a href="https://srisathyasaivedicsocietysingapore.org/gmy2026/" target="_blank" class="btn-gold">GMY Database ↗</a>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- REGISTRATION -->
-  <div class="section" id="registration">
+  <section class="section" id="registration">
     <div class="section-head reveal">
       <div class="section-kicker">Join Us</div>
       <h2 class="section-title">GMY 2026 <em>Registration</em></h2>
       <div class="section-rule"></div>
-      <p class="section-sub">Participate in this sacred event as a Ritwik, Volunteer, or Attendee. All roles are essential to the success of the Yagna.</p>
     </div>
-
     <div class="reg-grid">
-      <div class="reg-card featured reveal">
-        <span class="reg-badge">Most needed</span>
+      <div class="reg-card feat reveal">
+        <span class="reg-badge">Most Needed</span>
         <div class="reg-title">Ritwik</div>
-        <div class="reg-desc">Trained chanters who perform the Gayatri Homa and lead the fire ritual. Must be proficient in Gayatri Mantra and Homa procedures.</div>
-        <ul class="reg-details">
+        <div class="reg-desc">Trained chanters who perform the Gayatri Homa and lead the fire ritual. Proficiency in Gayatri Mantra and Homa procedure required.</div>
+        <ul class="reg-list">
           <li>Proficiency in Gayatri Mantra required</li>
-          <li>Attend pre-event briefing (TBC)</li>
-          <li>Minimum 1-day commitment</li>
-          <li>Dhoti / saree for ceremony</li>
+          <li>Attend pre-event Ritwik briefing</li>
+          <li>Min. 1-day commitment</li>
+          <li>Traditional attire (dhoti/saree) for ceremony</li>
         </ul>
-        <a href="https://tinyurl.com/SGMY-SG2026" target="_blank" class="btn-fire">Register as Ritwik ↗</a>
+        <a href="https://tinyurl.com/SGMY-SG2026" target="_blank" class="btn-saffron">Register as Ritwik ↗</a>
       </div>
-
       <div class="reg-card reveal">
         <span class="reg-badge" style="background:rgba(200,145,58,0.1);color:var(--gold);">Seva</span>
         <div class="reg-title">Volunteer</div>
-        <div class="reg-desc">Support the event through logistics, crowd management, prasadam preparation, photography, or any other area of service.</div>
-        <ul class="reg-details">
+        <div class="reg-desc">Support the event through logistics, crowd management, prasadam preparation, photography, or Blood Donation Drive coordination on Day 2.</div>
+        <ul class="reg-list">
           <li>Various roles available</li>
           <li>Morning and evening shifts</li>
           <li>No prior experience needed</li>
           <li>Briefing on Day 1 morning</li>
         </ul>
-        <a href="https://tinyurl.com/SGMY-SG2026" target="_blank" class="btn-outline-fire">Register as Volunteer ↗</a>
+        <a href="https://tinyurl.com/SGMY-SG2026" target="_blank" class="btn-gold">Register as Volunteer ↗</a>
       </div>
-
       <div class="reg-card reveal">
-        <span class="reg-badge" style="background:rgba(158,123,94,0.1);color:var(--brown-light);">Open</span>
+        <span class="reg-badge" style="background:rgba(158,123,94,0.1);color:var(--brown-light);">Open to All</span>
         <div class="reg-title">Devotee / Attendee</div>
-        <div class="reg-desc">All devotees are welcome to attend, participate in Japa, seek blessings, and receive prasadam on any of the three days.</div>
-        <ul class="reg-details">
-          <li>No registration required</li>
-          <li>8 May – 10 May 2026</li>
-          <li>Holy Tree Sri Subramaniar Temple, Sengkang</li>
-          <li>All are welcome — bring family</li>
+        <div class="reg-desc">All devotees are welcome to attend, participate in Japa, receive blessings, and partake in prasadam on any of the three days.</div>
+        <ul class="reg-list">
+          <li>No registration required to attend</li>
+          <li>8–10 May 2026</li>
+          <li>Field 2, 24 Geylang East Ave 2</li>
+          <li>Bring family and friends</li>
         </ul>
-        <a href="#about" class="btn-outline-fire">View Event Details ↗</a>
+        <a href="#venue" class="btn-gold">View Directions ↗</a>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- GALLERY & ARCHIVE -->
-  <div class="section" id="gallery">
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
     <div class="section-head reveal">
       <div class="section-kicker">Memories</div>
       <h2 class="section-title">Photos & <em>Videos</em></h2>
       <div class="section-rule"></div>
-      <p class="section-sub">Browse photos and videos from past Gayatri Maha Yagna events. Full albums are on Google Drive.</p>
     </div>
-
-    <div class="year-tabs reveal">
-      <button class="ytab active" onclick="switchYear('2025', this)">GMY 2025</button>
-      <button class="ytab" onclick="switchYear('2024', this)">GMY 2024</button>
-      <button class="ytab" onclick="switchYear('2023', this)">GMY 2023</button>
-      <button class="ytab" onclick="switchYear('2022', this)">GMY 2022</button>
+    <div class="ytabs reveal">
+      <button class="ytab active" onclick="switchYear('2025',this)">GMY 2025</button>
+      <button class="ytab" onclick="switchYear('2024',this)">GMY 2024</button>
+      <button class="ytab" onclick="switchYear('2023',this)">GMY 2023</button>
+      <button class="ytab" onclick="switchYear('2022',this)">GMY 2022</button>
     </div>
-
-    <!-- 2025 -->
-    <div class="archive-panel active" id="panel-2025">
-      <div class="archive-grid reveal">
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">🔥</div><div class="archive-placeholder-label">Homa · Day 2</div></div><div class="archive-overlay">GMY 2025 · Day 2 Maha Homa</div></div>
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">🪔</div><div class="archive-placeholder-label">Purnahuti</div></div><div class="archive-overlay">GMY 2025 · Purnahuti</div></div>
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">🌸</div><div class="archive-placeholder-label">Mangala Arati</div></div><div class="archive-overlay">GMY 2025 · Mangala Arati</div></div>
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">🍚</div><div class="archive-placeholder-label">Annadanam</div></div><div class="archive-overlay">GMY 2025 · Annadanam</div></div>
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">📿</div><div class="archive-placeholder-label">Ritwiks</div></div><div class="archive-overlay">GMY 2025 · Ritwik Group</div></div>
+    <div id="yp-2025" class="ypanel active">
+      <div class="ph-grid">
+        <div class="ph-item"><div class="ph-ph"><div class="ph-ic">🔥</div><div class="ph-lb">GMY 2025 · Homa</div></div></div>
+        <div class="ph-item"><div class="ph-ph"><div class="ph-ic">🪔</div><div class="ph-lb">Purnahuti</div></div></div>
+        <div class="ph-item"><div class="ph-ph"><div class="ph-ic">🌸</div><div class="ph-lb">Mangala Arati</div></div></div>
+        <div class="ph-item"><div class="ph-ph"><div class="ph-ic">🍚</div><div class="ph-lb">Annadanam</div></div></div>
+        <div class="ph-item"><div class="ph-ph"><div class="ph-ic">📿</div><div class="ph-lb">Ritwiks</div></div></div>
       </div>
-      <div class="archive-meta reveal">
-        <div class="archive-stat"><div class="archive-stat-num">3</div><div class="archive-stat-lbl">Days</div></div>
-        <div class="archive-stat"><div class="archive-stat-num">28</div><div class="archive-stat-lbl">Ritwiks</div></div>
-        <div class="archive-stat"><div class="archive-stat-num">300+</div><div class="archive-stat-lbl">Devotees</div></div>
-        <a href="https://drive.google.com/drive/folders/GMY2025_FOLDER_ID" target="_blank" class="archive-drive-btn">Full Album on Drive ↗</a>
+      <div style="margin-top:1rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;">
+        <span style="font-size:12px;color:var(--text-light);">Replace placeholders with actual photos from GMY 2025.</span>
+        <a href="https://drive.google.com/drive/folders/GMY2025" target="_blank" class="btn-gold">Full Album on Drive ↗</a>
       </div>
     </div>
-
-    <!-- 2024 -->
-    <div class="archive-panel" id="panel-2024">
-      <div class="archive-grid">
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">🔥</div><div class="archive-placeholder-label">GMY 2024 · Homa</div></div></div>
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">🪔</div><div class="archive-placeholder-label">GMY 2024 · Arati</div></div></div>
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">📿</div><div class="archive-placeholder-label">GMY 2024</div></div></div>
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">🌸</div><div class="archive-placeholder-label">GMY 2024</div></div></div>
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">🍚</div><div class="archive-placeholder-label">GMY 2024</div></div></div>
-      </div>
-      <div class="archive-meta">
-        <div class="archive-stat"><div class="archive-stat-num">3</div><div class="archive-stat-lbl">Days</div></div>
-        <div class="archive-stat"><div class="archive-stat-num">24</div><div class="archive-stat-lbl">Ritwiks</div></div>
-        <div class="archive-stat"><div class="archive-stat-num">250+</div><div class="archive-stat-lbl">Devotees</div></div>
-        <a href="https://drive.google.com/drive/folders/GMY2024_FOLDER_ID" target="_blank" class="archive-drive-btn">Full Album on Drive ↗</a>
-      </div>
-    </div>
-
-    <!-- 2023 & 2022 panels (simplified) -->
-    <div class="archive-panel" id="panel-2023">
-      <div class="archive-grid">
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">🔥</div><div class="archive-placeholder-label">GMY 2023</div></div></div>
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">🪔</div><div class="archive-placeholder-label">GMY 2023</div></div></div>
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">📿</div><div class="archive-placeholder-label">GMY 2023</div></div></div>
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">🌸</div><div class="archive-placeholder-label">GMY 2023</div></div></div>
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">🍚</div><div class="archive-placeholder-label">GMY 2023</div></div></div>
-      </div>
-      <div class="archive-meta">
-        <a href="https://drive.google.com/drive/folders/GMY2023_FOLDER_ID" target="_blank" class="archive-drive-btn">Full Album on Drive ↗</a>
-      </div>
-    </div>
-
-    <div class="archive-panel" id="panel-2022">
-      <div class="archive-grid">
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">🔥</div><div class="archive-placeholder-label">GMY 2022 · Inaugural</div></div></div>
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">🪔</div><div class="archive-placeholder-label">GMY 2022</div></div></div>
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">📿</div><div class="archive-placeholder-label">GMY 2022</div></div></div>
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">🌸</div><div class="archive-placeholder-label">GMY 2022</div></div></div>
-        <div class="archive-item"><div class="archive-placeholder"><div class="archive-placeholder-icon">🍚</div><div class="archive-placeholder-label">GMY 2022</div></div></div>
-      </div>
-      <div class="archive-meta">
-        <a href="https://drive.google.com/drive/folders/GMY2022_FOLDER_ID" target="_blank" class="archive-drive-btn">Full Album on Drive ↗</a>
-      </div>
-    </div>
-  </div>
+    <div id="yp-2024" class="ypanel"><div style="padding:2rem;text-align:center;font-size:13px;color:var(--text-light);">Upload GMY 2024 photos to Google Drive and link here.</div><a href="#" class="btn-gold" style="display:block;width:fit-content;margin:0.75rem auto;">View Drive Folder ↗</a></div>
+    <div id="yp-2023" class="ypanel"><div style="padding:2rem;text-align:center;font-size:13px;color:var(--text-light);">Upload GMY 2023 photos to Google Drive and link here.</div><a href="#" class="btn-gold" style="display:block;width:fit-content;margin:0.75rem auto;">View Drive Folder ↗</a></div>
+    <div id="yp-2022" class="ypanel"><div style="padding:2rem;text-align:center;font-size:13px;color:var(--text-light);">Upload GMY 2022 photos to Google Drive and link here.</div><a href="#" class="btn-gold" style="display:block;width:fit-content;margin:0.75rem auto;">View Drive Folder ↗</a></div>
+  </section>
 
   <!-- FAQ -->
-  <div class="section" id="faq">
+  <section class="section" id="faq">
     <div class="section-head reveal">
       <div class="section-kicker">Common Questions</div>
       <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
       <div class="section-rule"></div>
     </div>
     <div class="reveal">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">What is Gayatri Maha Yagna?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Gayatri Maha Yagna (GMY) is a large-scale fire sacrifice (Homa) dedicated to the Gayatri Mantra — the most sacred of all Vedic mantras. The event brings together trained Ritwiks to perform the Homa over three days while devotees participate through collective Japa, prayers, and service. SSSVSS has been conducting GMY annually, and the 2026 edition is especially significant as part of Bhagawan Sri Sathya Sai Baba's Centennial year.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">What is the Japa Sankalpa and how do I participate?<span class="faq-icon">+</span></button>
-        <div class="faq-a">
-          <p>The Japa Sankalpa is a sacred resolve to chant the Gayatri Mantra a fixed number of times daily in the weeks leading up to GMY. Your count becomes part of a collective offering made during Purnahuti on the final day.</p>
-          <p>To participate: choose your daily target (108, 216, or 1008 repetitions), chant at a consistent time each day, and submit your weekly count using the form on this page. All counts are tallied and displayed in the live total above.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Who can be a Ritwik? What training is required?<span class="faq-icon">+</span></button>
-        <div class="faq-a">
-          <p>Ritwiks are devotees who are proficient in the Gayatri Mantra and the Homa procedure. Prior experience in SSSVSS Vedic classes or demonstrated chanting ability is preferred. If you wish to participate as a Ritwik, please register using the link above — the GMY team will contact you for a brief assessment.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Where is the event held and is it open to the public?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>GMY 2026 will be held at Holy Tree Sri Subramaniar Temple, Sengkang, Singapore. The event is open to all devotees — no registration is required to attend as an observer or participant. Attendees are welcome on any or all three days and will receive prasadam.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">How is the Japa count verified and tallied?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Participants submit their Japa count through the Google Form on this page. Submissions are automatically recorded in a Google Sheet. The initiative lead reviews and approves entries, and the running total is updated regularly (displayed live on this page). The final cumulative total is announced and offered during Purnahuti on Day 3.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">What should I bring or wear to the event?<span class="faq-icon">+</span></button>
-        <div class="faq-a">
-          <p>Devotees are encouraged to wear traditional attire — saree or salwar for ladies, dhoti or veshti for gents. Ritwiks must wear dhoti. Please arrive with a clean, sattvic mindset and avoid non-vegetarian food on the day of attendance.</p>
-          <p>Bring your own japa mala if you intend to chant during the event. Prasadam will be provided on all three days.</p>
-        </div>
-      </div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the Sri Gayatri Maha Yagna?<span class="faq-icon">+</span></button><div class="faq-a"><p>The Sri Gayatri Maha Yagna is an annual large-scale fire sacrifice (Homa) and collective chanting of the Gayatri Mantra, conducted by SSSVSS. The 2026 edition is a special centennial offering in conjunction with Bhagawan Sri Sathya Sai Baba's Araadhana Mahotsavam.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Where exactly is the venue?<span class="faq-icon">+</span></button><div class="faq-a"><p>The 2026 event is at Field 2, 24 Geylang East Avenue 2, Singapore 389752 — opposite Sri Sivan Temple. This is an open field venue. Please check the Google Maps link in the Venue section for directions.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the Blood Donation Drive on Day 2?<span class="faq-icon">+</span></button><div class="faq-a"><p>On Saturday, 9th May (Day 2), a Blood Donation Drive is conducted from 9:00 AM to 3:00 PM alongside the religious programme. This is SSSVSS's act of community seva — donating blood is considered one of the highest forms of selfless service. All eligible devotees are encouraged to donate.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How does the Japa count submission work?<span class="faq-icon">+</span></button><div class="faq-a"><p>There are two tracks: (1) Public submission via the Google Form on this page — open to all devotees, contributions are tallied and displayed as a cumulative total. (2) Registered database users — devotees registered by admin in the GMY2026 database can submit counts with full tracking, duplicate validation, and per-user / block-level reporting. Contact admin to be added as a registered user.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What should I wear and bring?<span class="faq-icon">+</span></button><div class="faq-a"><p>Traditional attire is encouraged — saree or salwar for ladies, dhoti or veshti for gents. Ritwiks must wear dhoti. Bring a japa mala if you intend to chant. Please observe a vegetarian diet on days of attendance. Prasadam is provided at all sessions.</p></div></div>
+    </div>
+  </section>
+
+</div>
+<footer>
+  <div class="footer-inner">
+    <div class="f-brand">Sri Sathya Sai Vedic Society Singapore<span>Sai Ram 🙏 · GMY 2026 · Centennial Edition</span></div>
+    <div class="f-links-row">
+      <a href="index.html">Home</a>
+      <a href="90-day-prayers.html">90-Day Prayers</a>
+      <a href="https://tinyurl.com/SGMY-SG2026" target="_blank">Register</a>
+      <a href="https://srisathyasaivedicsocietysingapore.org/gmy2026/" target="_blank">GMY Database</a>
     </div>
   </div>
-
-</div><!-- /page -->
-
-<!-- FOOTER -->
-<div class="page-footer">
-  <div class="pf-left">
-    Sri Sathya Sai Vedic Society Singapore
-    <span>Sai Ram 🙏 · Yearly Events</span>
-  </div>
-  <div class="pf-links">
-    <a href="index.html">Home</a>
-    <a href="#japa">Japa Count</a>
-    <a href="#registration">Register</a>
-    <a href="https://www.youtube.com/c/SriSathyaSaiVedicSocietySingapore" target="_blank">YouTube</a>
-  </div>
-</div>
+  <div class="footer-bottom"><span>© 2026 Sri Sathya Sai Vedic Society Singapore</span><span>Jai Sai Ram 🙏</span></div>
+</footer>
 
 <script>
-  // ── Countdown to GMY 2026 (8 May 2026) ──
-  const target = new Date('2026-05-08T08:00:00+08:00');
-  function updateCountdown() {
-    const now = new Date();
-    const diff = target - now;
-    if (diff > 0) {
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      document.getElementById('countdown-val').textContent = days + ' days';
-    } else {
-      document.getElementById('countdown-val').textContent = 'Ongoing!';
-    }
-  }
-  updateCountdown();
-
-  // ── Animate Japa progress bar on scroll ──
-  const barObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        document.getElementById('japa-bar').style.width = '12.4%';
-        barObserver.disconnect();
-      }
-    });
-  }, { threshold: 0.3 });
-  const japaSection = document.getElementById('japa');
-  if (japaSection) barObserver.observe(japaSection);
-
-  // ── Year tabs ──
-  function switchYear(year, btn) {
-    document.querySelectorAll('.ytab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.archive-panel').forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('panel-' + year).classList.add('active');
-  }
-
-  // ── FAQ accordion ──
-  function toggleFaq(btn) {
-    const answer = btn.nextElementSibling;
-    const isOpen = btn.classList.contains('open');
-    document.querySelectorAll('.faq-q').forEach(b => { b.classList.remove('open'); b.nextElementSibling.classList.remove('open'); });
-    if (!isOpen) { btn.classList.add('open'); answer.classList.add('open'); }
-  }
-
-  // ── Scroll reveal ──
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 60);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // ── Active section nav ──
-  const sections = ['about','sankalpa','japa','registration','gallery','faq'];
-  const navLinks = document.querySelectorAll('.snav-link');
-  window.addEventListener('scroll', () => {
-    let current = 'about';
-    sections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el && window.scrollY >= el.offsetTop - 140) current = id;
-    });
-    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
-  });
+  const obs=new IntersectionObserver((es)=>es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*70);obs.unobserve(e.target);}}),{threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  const secs=Array.from(document.querySelectorAll('section[id]'));
+  const snavs=document.querySelectorAll('.snav-link');
+  window.addEventListener('scroll',()=>{let c=secs[0]?.id;secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)c=s.id;});snavs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+c));});
+  function toggleFaq(btn){const a=btn.nextElementSibling,o=btn.classList.contains('open');document.querySelectorAll('.faq-q').forEach(b=>{b.classList.remove('open');b.nextElementSibling.classList.remove('open');});if(!o){btn.classList.add('open');a.classList.add('open');}}
+  function switchYear(y,btn){document.querySelectorAll('.ytab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.ypanel').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById('yp-'+y).classList.add('active');}
+  // Countdown
+  const target=new Date('2026-05-08T08:00:00+08:00');
+  const diff=target-new Date();
+  if(diff>0){document.getElementById('cdown').textContent=Math.floor(diff/(1000*60*60*24))+' days';document.getElementById('days-left').textContent=Math.floor(diff/(1000*60*60*24));}
+  else{document.getElementById('cdown').textContent='Ongoing!';}
+  // Animate bar
+  const barObs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){document.getElementById('jbar').style.width='12.4%';barObs.disconnect();}});},{threshold:0.3});
+  barObs.observe(document.getElementById('japa'));
 </script>
 </body>
 </html>
